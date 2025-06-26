@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Taxi Services</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary: #1ecb15;
+            --accent: #f9d713;
+            --white: #ffffff;
+            --dark: #222222;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            padding: 40px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-header h1 {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .section-header h1::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .category-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #dee2e6;
+        }
+        
+        .vehicle-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .vehicle-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .vehicle-img {
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .highlight-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .vehicle-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .vehicle-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .book-btn {
+            background-color: var(--primary);
+            color: var(--white);
+            font-weight: 600;
+            width: 100%;
+        }
+        
+        .book-btn:hover {
+            background-color: var(--dark);
+            color: var(--white);
+        }
+        
+        .category-badge {
+            background-color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="taxi-booking-section">
+            <div class="section-header">
+                <h1 class="display-5 fw-bold">Premium Taxi Services</h1>
+                <p class="lead text-muted">Choose from our wide range of vehicles to suit your travel needs</p>
+            </div>
+            
+            <!-- 4 Seater Cars -->
+            <div class="mb-5">
+                <h2 class="category-title d-flex align-items-center">
+                    Standard Sedans 
+                    <span class="badge category-badge ms-3">4 Seaters</span>
+                </h2>
+                <div class="row g-4">
+                    <!-- Dzire -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card vehicle-card shadow-sm h-100">
+                            <div class="position-relative">
+                                <span class="highlight-tag">Most Popular</span>
+                                <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top vehicle-img" alt="Maruti Dzire">
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <h3 class="vehicle-name mb-0">Maruti Dzire</h3>
+                                    <div class="vehicle-price">₹10/km</div>
+                                </div>
+                                <ul class="list-unstyled">
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">Vehicle Type:</span>
+                                        <span class="fw-semibold">Sedan</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">AC:</span>
+                                        <span class="fw-semibold">Yes</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">Max Passengers:</span>
+                                        <span class="fw-semibold">4</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-transparent border-top-0">
+                                <button class="btn book-btn">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Alto -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card vehicle-card shadow-sm h-100">
+                            <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top vehicle-img" alt="Maruti Alto">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <h3 class="vehicle-name mb-0">Maruti Alto</h3>
+                                    <div class="vehicle-price">₹9/km</div>
+                                </div>
+                                <ul class="list-unstyled">
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">Vehicle Type:</span>
+                                        <span class="fw-semibold">Hatchback</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">AC:</span>
+                                        <span class="fw-semibold">Yes</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">Max Passengers:</span>
+                                        <span class="fw-semibold">4</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-transparent border-top-0">
+                                <button class="btn book-btn">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Swift -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card vehicle-card shadow-sm h-100">
+                            <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top vehicle-img" alt="Maruti Swift">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <h3 class="vehicle-name mb-0">Maruti Swift</h3>
+                                    <div class="vehicle-price">₹11/km</div>
+                                </div>
+                                <ul class="list-unstyled">
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">Vehicle Type:</span>
+                                        <span class="fw-semibold">Hatchback</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">AC:</span>
+                                        <span class="fw-semibold">Yes</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">Max Passengers:</span>
+                                        <span class="fw-semibold">4</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-transparent border-top-0">
+                                <button class="btn book-btn">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tata Indigo -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card vehicle-card shadow-sm h-100">
+                            <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top vehicle-img" alt="Tata Indigo">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <h3 class="vehicle-name mb-0">Tata Indigo</h3>
+                                    <div class="vehicle-price">₹11/km</div>
+                                </div>
+                                <ul class="list-unstyled">
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">Vehicle Type:</span>
+                                        <span class="fw-semibold">Sedan</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">AC:</span>
+                                        <span class="fw-semibold">Yes</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">Max Passengers:</span>
+                                        <span class="fw-semibold">4</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-transparent border-top-0">
+                                <button class="btn book-btn">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 6-7 Seater Cars -->
+            <div class="mb-5">
+                <h2 class="category-title d-flex align-items-center">
+                    Family Vehicles 
+                    <span class="badge category-badge ms-3">6-7 Seaters</span>
+                </h2>
+                <div class="row g-4">
+                    <!-- Maruti Ertiga -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card vehicle-card shadow-sm h-100">
+                            <div class="position-relative">
+                                <span class="highlight-tag">Family Choice</span>
+                                <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top vehicle-img" alt="Maruti Ertiga">
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <h3 class="vehicle-name mb-0">Maruti Ertiga</h3>
+                                    <div class="vehicle-price">₹14/km</div>
+                                </div>
+                                <ul class="list-unstyled">
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">Vehicle Type:</span>
+                                        <span class="fw-semibold">MPV</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">AC:</span>
+                                        <span class="fw-semibold">Yes</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">Max Passengers:</span>
+                                        <span class="fw-semibold">7</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-transparent border-top-0">
+                                <button class="btn book-btn">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Hyundai Creta -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card vehicle-card shadow-sm h-100">
+                            <img src="https://images.unsplash.com/photo-1494976388901-7509ad7062f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top vehicle-img" alt="Hyundai Creta">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <h3 class="vehicle-name mb-0">Hyundai Creta</h3>
+                                    <div class="vehicle-price">₹14/km</div>
+                                </div>
+                                <ul class="list-unstyled">
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">Vehicle Type:</span>
+                                        <span class="fw-semibold">SUV</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">AC:</span>
+                                        <span class="fw-semibold">Yes</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">Max Passengers:</span>
+                                        <span class="fw-semibold">5</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-transparent border-top-0">
+                                <button class="btn book-btn">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Toyota Innova -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card vehicle-card shadow-sm h-100">
+                            <div class="position-relative">
+                                <span class="highlight-tag">Premium</span>
+                                <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top vehicle-img" alt="Toyota Innova">
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <h3 class="vehicle-name mb-0">Toyota Innova</h3>
+                                    <div class="vehicle-price">₹15/km</div>
+                                </div>
+                                <ul class="list-unstyled">
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">Vehicle Type:</span>
+                                        <span class="fw-semibold">MPV</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">AC:</span>
+                                        <span class="fw-semibold">Yes</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">Max Passengers:</span>
+                                        <span class="fw-semibold">7</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-transparent border-top-0">
+                                <button class="btn book-btn">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Toyota Innova Crysta -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card vehicle-card shadow-sm h-100">
+                            <div class="position-relative">
+                                <span class="highlight-tag">Luxury</span>
+                                <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top vehicle-img" alt="Toyota Innova Crysta">
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <h3 class="vehicle-name mb-0">Toyota Innova Crysta</h3>
+                                    <div class="vehicle-price">₹16/km</div>
+                                </div>
+                                <ul class="list-unstyled">
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">Vehicle Type:</span>
+                                        <span class="fw-semibold">MPV</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">AC:</span>
+                                        <span class="fw-semibold">Yes</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">Max Passengers:</span>
+                                        <span class="fw-semibold">7</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-transparent border-top-0">
+                                <button class="btn book-btn">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Travelers -->
+            <div class="mb-5">
+                <h2 class="category-title d-flex align-items-center">
+                    Group Travelers 
+                    <span class="badge category-badge ms-3">13+ Seaters</span>
+                </h2>
+                <div class="row g-4">
+                    <!-- 13/14 Seater -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card vehicle-card shadow-sm h-100">
+                            <img src="https://images.unsplash.com/photo-1544620347-c4fd2a4593de?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top vehicle-img" alt="13/14 Seater Traveler">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <h3 class="vehicle-name mb-0">13/14 Seater</h3>
+                                    <div class="vehicle-price">₹24/km</div>
+                                </div>
+                                <ul class="list-unstyled">
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">Vehicle Type:</span>
+                                        <span class="fw-semibold">Mini Bus</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">AC:</span>
+                                        <span class="fw-semibold">Yes</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">Max Passengers:</span>
+                                        <span class="fw-semibold">13-14</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-transparent border-top-0">
+                                <button class="btn book-btn">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 17 Seater -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card vehicle-card shadow-sm h-100">
+                            <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top vehicle-img" alt="17 Seater Traveler">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <h3 class="vehicle-name mb-0">17 Seater</h3>
+                                    <div class="vehicle-price">₹25/km</div>
+                                </div>
+                                <ul class="list-unstyled">
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">Vehicle Type:</span>
+                                        <span class="fw-semibold">Mini Bus</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">AC:</span>
+                                        <span class="fw-semibold">Yes</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">Max Passengers:</span>
+                                        <span class="fw-semibold">17</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-transparent border-top-0">
+                                <button class="btn book-btn">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 20 Seater -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card vehicle-card shadow-sm h-100">
+                            <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top vehicle-img" alt="20 Seater Traveler">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <h3 class="vehicle-name mb-0">20 Seater</h3>
+                                    <div class="vehicle-price">₹30/km</div>
+                                </div>
+                                <ul class="list-unstyled">
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">Vehicle Type:</span>
+                                        <span class="fw-semibold">Mini Bus</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">AC:</span>
+                                        <span class="fw-semibold">Yes</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span class="text-muted">Max Passengers:</span>
+                                        <span class="fw-semibold">20</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-transparent border-top-0">
+                                <button class="btn book-btn">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
