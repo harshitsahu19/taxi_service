@@ -17,1040 +17,1057 @@
 
 <body>
 
-<style>
-  /* Base Styles */
-  :root {
-    --primary: #1ecb15;
-    --primary-dark: #16a00e;
-    --dark: #222;
-    --light: #fff;
-    --gray: #f5f5f5;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
- 
-  
-  /* Combined Navigation Container - Made sticky */
-  .nav-container {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-  }
-  
-  /* Top Bar - Updated with only contact info */
-  .top-bar {
-    background-color: var(--primary);
-    color: var(--light);
-    padding: 0.5rem 2rem;
-    display: flex;
-    justify-content: center; /* Changed to center */
-    align-items: center;
-    font-size: 0.9rem;
-  }
-  
-  .top-contact {
-    display: flex;
-    gap: 1.5rem;
-  }
-  
-  .top-contact-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .top-contact-item i {
-    color: var(--light);
-    opacity: 0.9;
-  }
-  
-  /* Main Navbar */
-  .navbar {
-    background-color: var(--light);
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: var(--shadow);
-  }
-  
-  /* Logo with Image */
-  .logo {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo img {
-    height: 40px;
-    width: auto;
-    object-fit: contain;
-  }
-  
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-  }
-  
-  .nav-links a {
-    color: var(--dark);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-    position: relative;
-  }
-  
-  .nav-links a:hover {
-    color: var(--primary);
-  }
-  
-  .nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--primary);
-    transition: width 0.3s;
-  }
-  
-  .nav-links a:hover::after {
-    width: 100%;
-  }
-  
-  .book-now-btn {
-    background-color: var(--primary);
-    color: var(--light);
-    padding: 0.7rem 1.5rem;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: all 0.3s;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .book-now-btn:hover {
-    background-color: var(--primary-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(30, 203, 21, 0.2);
-  }
-  
-  /* Mobile Menu Styles */
-  .hamburger {
-    display: none;
-    cursor: pointer;
-    color: var(--dark);
-    font-size: 1.5rem;
-    z-index: 1001;
-    transition: transform 0.3s;
-  }
-  
-  .close-btn {
-    display: none;
-    position: absolute;
-    top: 1.5rem;
-    right: 2rem;
-    font-size: 1.8rem;
-    color: var(--dark);
-    cursor: pointer;
-  }
-  
-  /* Responsive Styles */
-  @media (max-width: 992px) {
-    .nav-links {
-      gap: 1.5rem;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .top-bar {
-      display: none;
-    }
-    
-    .logo img {
-      height: 35px;
-    }
-    
-    .nav-links {
-      position: fixed;
-      top: 0;
-      left: -100%;
-      width: 80%;
-      height: 100vh;
-      background-color: var(--light);
-      flex-direction: column;
-      gap: 2rem;
-      padding: 5rem 2rem;
-      transition: left 0.3s ease-in-out;
-      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
-    }
-    
-    .nav-links.active {
-      left: 0;
-    }
-    
-    .hamburger {
-      display: block;
-    }
-    
-    .close-btn {
-      display: block;
-    }
-    
-    .navbar {
-      padding: 1rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .logo img {
-      height: 30px;
-    }
-  }
-</style>
-
-<!-- Combined Navigation Container -->
-<div class="nav-container">
-  <div class="top-bar">
-    <div class="top-contact">
-      <div class="top-contact-item">
-        <i class="fas fa-phone"></i>
-        <span>+1 234 567 890</span>
-      </div>
-      <div class="top-contact-item">
-        <i class="fas fa-envelope"></i>
-        <span>book@taxi.com</span>
-      </div>
-      <div class="top-contact-item">
-        <i class="fas fa-clock"></i>
-        <span>24/7 Service</span>
-      </div>
-    </div>
-  </div>
-
-  <nav class="navbar">
-    <div class="logo">
-      <img src="./asssets/img/navLogo.png" alt="TaxiGo Logo">
-    </div>
-    
-    <div class="nav-links">
-      <div class="close-btn">&times;</div>
-      <a href="#">Home</a>
-      <a href="#">Services</a>
-      <a href="#">Fares</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-      <button class="book-now-btn">Book Now</button>
-    </div>
-    
-    <div class="hamburger">
-      <i class="fas fa-bars"></i>
-    </div>
-  </nav>
-</div>
-
-<script>
-  // Mobile menu toggle
-  const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
-  const closeBtn = document.querySelector('.close-btn');
-  
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.add('active');
-  });
-  
-  closeBtn.addEventListener('click', () => {
-    navLinks.classList.remove('active');
-  });
-  
-  // Close menu when clicking on nav links
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('active');
-    });
-  });
-</script>
-    
-<section class="modern-tour-packages">
-  <style>
-    /* Modern Tour Packages with Dark Overlay */
-    .modern-tour-packages {
-      position: relative;
-      padding: 80px 0;
-      font-family: 'Poppins', sans-serif;
-      overflow: hidden;
-    }
-    
-    /* Background Image with Dark Overlay */
-    .modern-tour-packages::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: 
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      z-index: 0;
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-      position: relative;
-      z-index: 1;
-    }
-    
-    .section-header {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-    
-    .section-header h2 {
-      color: white;
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 15px;
-      position: relative;
-      display: inline-block;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    }
-    
-    .section-header h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background-color: #1ecb15;
-      border-radius: 2px;
-    }
-    
-    .section-header p {
-      color: rgba(255,255,255,0.9);
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto;
-      line-height: 1.6;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.2);
-    }
-    
-    .packages-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 25px;
-    }
-    
-    .package-card {
-      background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      position: relative;
-      z-index: 1;
-      border: 2px solid rgba(30,203,21,0.1);
-    }
-    
-    .package-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-      border-color: rgba(30,203,21,0.3);
-    }
-    
-    .package-media {
-      height: 200px;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .package-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.8s ease;
-    }
-    
-    .package-card:hover .package-media img {
-      transform: scale(1.1);
-    }
-    
-    .package-badge {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      background-color: #1ecb15;
-      color: white;
-      padding: 5px 15px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      box-shadow: 0 4px 10px rgba(30,203,21,0.3);
-    }
-    
-    .package-price {
-      position: absolute;
-      bottom: 15px;
-      right: 15px;
-      background: rgba(0,0,0,0.7);
-      color: white;
-      padding: 5px 15px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      backdrop-filter: blur(5px);
-    }
-    
-    .package-content {
-      padding: 20px;
-    }
-    
-    .package-title {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #1a2e35;
-      margin-bottom: 10px;
-    }
-    
-    .package-desc {
-      font-size: 0.9rem;
-      color: #5a6f7b;
-      margin-bottom: 20px;
-      line-height: 1.6;
-    }
-    
-    .package-features {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-    
-    .feature {
-      display: flex;
-      align-items: center;
-      font-size: 0.8rem;
-    }
-    
-    .feature-icon {
-      width: 24px;
-      height: 24px;
-      background: rgba(30,203,21,0.1);
-      color: #1ecb15;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 10px;
-      transition: all 0.3s ease;
-    }
-    
-    .package-card:hover .feature-icon {
-      background: #1ecb15;
-      color: white;
-      transform: rotate(15deg);
-    }
-    
-    .package-btn {
-      background-color: #1ecb15;
-      color: white;
-      border: none;
-      width: 100%;
-      padding: 12px;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .package-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(30,203,21,0.3);
-    }
-    
-    .package-btn::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      transition: 0.5s;
-    }
-    
-    .package-btn:hover::after {
-      left: 100%;
-    }
-    
-    .view-all {
-      text-align: center;
-      margin-top: 50px;
-    }
-    
-    .view-all-btn {
-      display: inline-flex;
-      align-items: center;
-      color: white;
-      font-weight: 600;
-      font-size: 1rem;
-      text-decoration: none;
-      padding: 12px 30px;
-      border-radius: 30px;
-      border: 2px solid white;
-      transition: all 0.3s ease;
-      background-color: rgba(255,255,255,0.1);
-      backdrop-filter: blur(5px);
-    }
-    
-    .view-all-btn:hover {
-      background: #1ecb15;
-      border-color: #1ecb15;
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(30,203,21,0.3);
-    }
-    
-    .view-all-btn i {
-      margin-left: 8px;
-      transition: transform 0.3s ease;
-    }
-    
-    .view-all-btn:hover i {
-      transform: translateX(5px);
-    }
-    
-    @media (max-width: 992px) {
-      .packages-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .modern-tour-packages {
-        padding: 60px 0;
-        background-attachment: scroll;
-      }
-      
-      .section-header h2 {
-        font-size: 2rem;
-      }
-      
-      .packages-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .package-media {
-        height: 180px;
-      }
-    }
-  </style>
-
-  <div class="container">
-    <div class="section-header">
-      <h2>Discover Madhya Pradesh</h2>
-      <p>Experience the heart of India with our premium tour packages. Comfortable rides, expert guides, and unforgettable memories.</p>
-    </div>
-
-    <div class="packages-grid">
-      <!-- Khajuraho Package -->
-      <div class="package-card">
-        <div class="package-media">
-          <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Khajuraho Temples">
-          <div class="package-badge">Heritage</div>
-          <div class="package-price">₹4,999</div>
-        </div>
-        <div class="package-content">
-          <h3 class="package-title">Khajuraho Temple Tour</h3>
-          <p class="package-desc">Explore the exquisite UNESCO World Heritage temples with intricate carvings and rich history.</p>
-          <div class="package-features">
-            <div class="feature">
-              <div class="feature-icon">
-                <i class="fas fa-road"></i>
-              </div>
-              <span>380 km</span>
-            </div>
-            <div class="feature">
-              <div class="feature-icon">
-                <i class="fas fa-clock"></i>
-              </div>
-              <span>6 hours</span>
-            </div>
-            <div class="feature">
-              <div class="feature-icon">
-                <i class="fas fa-car"></i>
-              </div>
-              <span>Innova Crysta</span>
-            </div>
-            <div class="feature">
-              <div class="feature-icon">
-                <i class="fas fa-hotel"></i>
-              </div>
-              <span>4★ Heritage Stay</span>
-            </div>
-          </div>
-          <button class="package-btn">Book Now</button>
-        </div>
-      </div>
-
-      <!-- Pachmarhi Package -->
-      <div class="package-card">
-        <div class="package-media">
-          <img src="https://images.unsplash.com/photo-1605540436563-5bca919ae766?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Pachmarhi">
-          <div class="package-badge">Hill Station</div>
-          <div class="package-price">₹3,799</div>
-        </div>
-        <div class="package-content">
-          <h3 class="package-title">Pachmarhi Getaway</h3>
-          <p class="package-desc">MP's only hill station with breathtaking waterfalls and panoramic views of Satpura ranges.</p>
-          <div class="package-features">
-            <div class="feature">
-              <div class="feature-icon">
-                <i class="fas fa-road"></i>
-              </div>
-              <span>260 km</span>
-            </div>
-            <div class="feature">
-              <div class="feature-icon">
-                <i class="fas fa-clock"></i>
-              </div>
-              <span>5 hours</span>
-            </div>
-            <div class="feature">
-              <div class="feature-icon">
-                <i class="fas fa-car"></i>
-              </div>
-              <span>Marazzo</span>
-            </div>
-            <div class="feature">
-              <div class="feature-icon">
-                <i class="fas fa-hotel"></i>
-              </div>
-              <span>3★ Resort</span>
-            </div>
-          </div>
-          <button class="package-btn">Book Now</button>
-        </div>
-      </div>
-
-      <!-- Bandhavgarh Package -->
-      <div class="package-card">
-        <div class="package-media">
-          <img src="https://www.blackbucksafarilodge.com/images/the-park-bulackbucks.jpg" alt="Bandhavgarh">
-          <div class="package-badge">Wildlife</div>
-          <div class="package-price">₹5,499</div>
-        </div>
-        <div class="package-content">
-          <h3 class="package-title">Bandhavgarh Safari</h3>
-          <p class="package-desc">Spot the majestic Royal Bengal Tigers in one of India's best national parks with expert guides.</p>
-          <div class="package-features">
-            <div class="feature">
-              <div class="feature-icon">
-                <i class="fas fa-road"></i>
-              </div>
-              <span>200 km</span>
-            </div>
-            <div class="feature">
-              <div class="feature-icon">
-                <i class="fas fa-clock"></i>
-              </div>
-              <span>4.5 hours</span>
-            </div>
-            <div class="feature">
-              <div class="feature-icon">
-                <i class="fas fa-car"></i>
-              </div>
-              <span>Safari Jeep</span>
-            </div>
-            <div class="feature">
-              <div class="feature-icon">
-                <i class="fas fa-hotel"></i>
-              </div>
-              <span>Jungle Resort</span>
-            </div>
-          </div>
-          <button class="package-btn">Book Now</button>
-        </div>
-      </div>
-
-      <!-- Orchha Package -->
-      <div class="package-card">
-        <div class="package-media">
-          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/d4/f2/fb/caption.jpg?w=500&h=400&s=1" alt="Orchha">
-          <div class="package-badge">Heritage</div>
-          <div class="package-price">₹3,299</div>
-        </div>
-        <div class="package-content">
-          <h3 class="package-title">Orchha Heritage Tour</h3>
-          <p class="package-desc">Discover ancient temples and palaces along the Betwa river in this hidden gem of MP.</p>
-          <div class="package-features">
-            <div class="feature">
-              <div class="feature-icon">
-                <i class="fas fa-road"></i>
-              </div>
-              <span>180 km</span>
-            </div>
-            <div class="feature">
-              <div class="feature-icon">
-                <i class="fas fa-clock"></i>
-              </div>
-              <span>3.5 hours</span>
-            </div>
-            <div class="feature">
-              <div class="feature-icon">
-                <i class="fas fa-car"></i>
-              </div>
-              <span>Swift Dzire</span>
-            </div>
-            <div class="feature">
-              <div class="feature-icon">
-                <i class="fas fa-hotel"></i>
-              </div>
-              <span>3★ Heritage Stay</span>
-            </div>
-          </div>
-          <button class="package-btn">Book Now</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="view-all">
-      <a href="#" class="view-all-btn">
-        Explore All Packages <i class="fas fa-arrow-right"></i>
-      </a>
-    </div>
-  </div>
-</section>
-
-
-
-
-<section>
     <style>
-/*==================== TAXI SERVICE CARD COMPONENT ====================*/
-/* Scoped to only affect elements within taxi-service-section */
-.taxi-service-section {
-    --tx-text-color: #000000;
-    --tx-bg-color: #282828;
-    --tx-primary-color: #1ecb15;
-    --tx-btn-text-color: #333333;
-    --tx-transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-    font-family: 'Poppins', sans-serif;
-    padding: 100px 0;
-    position: relative;
-    overflow: hidden;
-}
-
-.taxi-service-section .tx-container {
-    max-width: 1400px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.taxi-service-section .tx-section-header {
-    text-align: center;
-    margin-bottom: 60px;
-    position: relative;
-    z-index: 2;
-}
-
-.taxi-service-section .tx-section-header h2 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    background: linear-gradient(90deg, #1ecb15 0%, #0e8a08 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 20px;
-}
-
-.taxi-service-section .tx-section-header p {
-    color: rgba(0, 0, 0, 0.7);
-    max-width: 700px;
-    margin: 0 auto;
-    font-size: 1.1rem;
-}
-
-.taxi-service-section .tx-card__bx {
-    --tx-clr: #1ecb15;
-    height: 420px;
-    width: 100%;
-    overflow: hidden;
-    border-radius: 20px;
-    border-top-left-radius: 80px;
-    position: relative;
-    background: var(--tx-clr);
-    transition: var(--tx-transition);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-    margin-bottom: 30px;
-}
-
-.taxi-service-section .tx-card__bx:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 25px 50px rgba(30, 203, 21, 0.3);
-}
-
-.taxi-service-section .tx-card__bx .tx-card__data {
-    position: absolute;
-    inset: 10px;
-    border-radius: 10px;
-    background: white;
-    overflow: hidden;
-}
-
-.taxi-service-section .tx-card__bx .tx-card__icon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-bottom-right-radius: 50%;
-    height: 150px;
-    width: 150px;
-    background: var(--tx-clr);
-}
-
-.taxi-service-section .tx-card__bx .tx-card__icon::before {
-    content: '';
-    position: absolute;
-    bottom: -30px;
-    left: 0;
-    height: 30px;
-    width: 30px;
-    border-top-left-radius: 30px;
-    background: transparent;
-    box-shadow: -5px -5px 0 5px var(--tx-clr);
-}
-
-.taxi-service-section .tx-card__bx .tx-card__icon::after {
-    content: '';
-    position: absolute;
-    right: -30px;
-    top: 0;
-    height: 30px;
-    width: 30px;
-    border-top-left-radius: 30px;
-    background: transparent;
-    box-shadow: -5px -5px 0 5px var(--tx-clr);
-}
-
-.taxi-service-section .tx-card__bx .tx-card__icon .tx-card__icon-bx {
-    position: absolute;
-    inset: 10px;
-    border-radius: 10px;
-    border-top-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 60px;
-    background: var(--tx-bg-color);
-    color: var(--tx-clr);
-    transition: var(--tx-transition);
-}
-
-.taxi-service-section .tx-card__bx:hover .tx-card__icon .tx-card__icon-bx {
-    background: var(--tx-clr);
-    color: var(--tx-text-color);
-}
-
-.taxi-service-section .tx-card__bx .tx-card__content {
-    position: absolute;
-    top: 160px;
-    padding: 20px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 20px;
-    color: var(--tx-text-color);
-}
-
-.taxi-service-section .tx-card__bx .tx-card__content h3 {
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-.taxi-service-section .tx-card__bx .tx-card__content p {
-    font-size: 15px;
-    opacity: 0.8;
-    line-height: 1.6;
-}
-
-.taxi-service-section .tx-card__bx .tx-card__content a {
-    display: inline-flex;
-    align-self: center;
-    padding: 12px 30px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: 30px;
-    border: 2px solid var(--tx-clr);
-    color: var(--tx-btn-text-color);
-    background: var(--tx-clr);
-    transition: var(--tx-transition);
-    letter-spacing: 1px;
-}
-
-.taxi-service-section .tx-card__bx .tx-card__content a:hover {
-    background: transparent;
-    color: var(--tx-clr);
-}
+        /* Base Styles */
+        :root {
+            --primary: #1ecb15;
+            --primary-dark: #16a00e;
+            --dark: #222;
+            --light: #fff;
+            --gray: #f5f5f5;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
 
 
 
-/* Background elements */
-.taxi-service-section .tx-bg-elements {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    overflow: hidden;
-}
+        /* Combined Navigation Container - Made sticky */
+        .nav-container {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
 
-.taxi-service-section .tx-bg-circle {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(30, 203, 21, 0.05);
-    filter: blur(60px);
-}
+        /* Top Bar - Updated with only contact info */
+        .top-bar {
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 0.5rem 2rem;
+            display: flex;
+            justify-content: center;
+            /* Changed to center */
+            align-items: center;
+            font-size: 0.9rem;
+        }
 
-.taxi-service-section .tx-bg-circle-1 {
-    width: 400px;
-    height: 400px;
-    top: -100px;
-    left: -100px;
-}
+        .top-contact {
+            display: flex;
+            gap: 1.5rem;
+        }
 
-.taxi-service-section .tx-bg-circle-2 {
-    width: 600px;
-    height: 600px;
-    bottom: -200px;
-    right: -200px;
-}
+        .top-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
-@media (max-width: 768px) {
-    .taxi-service-section .tx-section-header h2 {
-        font-size: 2.2rem;
-    }
-    .taxi-service-section {
-        padding: 60px 0;
-    }
-}
-</style>
+        .top-contact-item i {
+            color: var(--light);
+            opacity: 0.9;
+        }
 
-<section class="taxi-service-section">
-    <!-- Background elements -->
-    <div class="tx-bg-elements">
-        <div class="tx-bg-circle tx-bg-circle-1"></div>
-        <div class="tx-bg-circle tx-bg-circle-2"></div>
+        /* Main Navbar */
+        .navbar {
+            background-color: var(--light);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow);
+        }
+
+        /* Logo with Image */
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .book-now-btn {
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .book-now-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(30, 203, 21, 0.2);
+        }
+
+        /* Mobile Menu Styles */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            color: var(--dark);
+            font-size: 1.5rem;
+            z-index: 1001;
+            transition: transform 0.3s;
+        }
+
+        .close-btn {
+            display: none;
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            font-size: 1.8rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .nav-links {
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                display: none;
+            }
+
+            .logo img {
+                height: 35px;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 80%;
+                height: 100vh;
+                background-color: var(--light);
+                flex-direction: column;
+                gap: 2rem;
+                padding: 5rem 2rem;
+                transition: left 0.3s ease-in-out;
+                box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .close-btn {
+                display: block;
+            }
+
+            .navbar {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo img {
+                height: 30px;
+            }
+        }
+    </style>
+
+    <!-- Combined Navigation Container -->
+    <div class="nav-container">
+        <div class="top-bar">
+            <div class="top-contact">
+                <div class="top-contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+1 234 567 890</span>
+                </div>
+                <div class="top-contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>book@taxi.com</span>
+                </div>
+                <div class="top-contact-item">
+                    <i class="fas fa-clock"></i>
+                    <span>24/7 Service</span>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <div class="logo">
+                <img src="./asssets/img/navLogo.png" alt="TaxiGo Logo">
+            </div>
+
+            <div class="nav-links">
+                <div class="close-btn">&times;</div>
+                <a href="#">Home</a>
+                <a href="#">Services</a>
+                <a href="#">Fares</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <button class="book-now-btn">Book Now</button>
+            </div>
+
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
     </div>
 
-    <div class="tx-container">
-        <div class="tx-section-header">
-            <h2>Premium Taxi Services</h2>
-            <p>Choose from our exclusive range of transportation solutions tailored to your specific needs</p>
-        </div>
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const closeBtn = document.querySelector('.close-btn');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.add('active');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+
+        // Close menu when clicking on nav links
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+
+    <section class="modern-tour-packages">
+        <style>
+            /* Modern Tour Packages with Dark Overlay */
+            .modern-tour-packages {
+                position: relative;
+                padding: 80px 0;
+                font-family: 'Poppins', sans-serif;
+                overflow: hidden;
+            }
+
+            /* Background Image with Dark Overlay */
+            .modern-tour-packages::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background:
+                    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                    url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+                z-index: 0;
+            }
+
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+                position: relative;
+                z-index: 1;
+            }
+
+            .section-header {
+                text-align: center;
+                margin-bottom: 50px;
+            }
+
+            .section-header h2 {
+                color: white;
+                font-size: 2.5rem;
+                font-weight: 700;
+                margin-bottom: 15px;
+                position: relative;
+                display: inline-block;
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            }
+
+            .section-header h2::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 4px;
+                background-color: #1ecb15;
+                border-radius: 2px;
+            }
+
+            .section-header p {
+                color: rgba(255, 255, 255, 0.9);
+                font-size: 1.1rem;
+                max-width: 700px;
+                margin: 0 auto;
+                line-height: 1.6;
+                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            }
+
+            .packages-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+                gap: 25px;
+            }
+
+            .package-card {
+                background: white;
+                border-radius: 16px;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                position: relative;
+                z-index: 1;
+                border: 2px solid rgba(30, 203, 21, 0.1);
+            }
+
+            .package-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+                border-color: rgba(30, 203, 21, 0.3);
+            }
+
+            .package-media {
+                height: 200px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .package-media img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.8s ease;
+            }
+
+            .package-card:hover .package-media img {
+                transform: scale(1.1);
+            }
+
+            .package-badge {
+                position: absolute;
+                top: 15px;
+                left: 15px;
+                background-color: #1ecb15;
+                color: white;
+                padding: 5px 15px;
+                border-radius: 20px;
+                font-size: 0.8rem;
+                font-weight: 600;
+                box-shadow: 0 4px 10px rgba(30, 203, 21, 0.3);
+            }
+
+            .package-price {
+                position: absolute;
+                bottom: 15px;
+                right: 15px;
+                background: rgba(0, 0, 0, 0.7);
+                color: white;
+                padding: 5px 15px;
+                border-radius: 20px;
+                font-size: 0.9rem;
+                font-weight: 600;
+                backdrop-filter: blur(5px);
+            }
+
+            .package-content {
+                padding: 20px;
+            }
+
+            .package-title {
+                font-size: 1.2rem;
+                font-weight: 700;
+                color: #1a2e35;
+                margin-bottom: 10px;
+            }
+
+            .package-desc {
+                font-size: 0.9rem;
+                color: #5a6f7b;
+                margin-bottom: 20px;
+                line-height: 1.6;
+            }
+
+            .package-features {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+                margin-bottom: 20px;
+            }
+
+            .feature {
+                display: flex;
+                align-items: center;
+                font-size: 0.8rem;
+            }
+
+            .feature-icon {
+                width: 24px;
+                height: 24px;
+                background: rgba(30, 203, 21, 0.1);
+                color: #1ecb15;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 10px;
+                transition: all 0.3s ease;
+            }
+
+            .package-card:hover .feature-icon {
+                background: #1ecb15;
+                color: white;
+                transform: rotate(15deg);
+            }
+
+            .package-btn {
+                background-color: #1ecb15;
+                color: white;
+                border: none;
+                width: 100%;
+                padding: 12px;
+                border-radius: 8px;
+                font-size: 0.9rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .package-btn:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 20px rgba(30, 203, 21, 0.3);
+            }
+
+            .package-btn::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+                transition: 0.5s;
+            }
+
+            .package-btn:hover::after {
+                left: 100%;
+            }
+
+            .view-all {
+                text-align: center;
+                margin-top: 50px;
+            }
+
+            .view-all-btn {
+                display: inline-flex;
+                align-items: center;
+                color: white;
+                font-weight: 600;
+                font-size: 1rem;
+                text-decoration: none;
+                padding: 12px 30px;
+                border-radius: 30px;
+                border: 2px solid white;
+                transition: all 0.3s ease;
+                background-color: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(5px);
+            }
+
+            .view-all-btn:hover {
+                background: #1ecb15;
+                border-color: #1ecb15;
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba(30, 203, 21, 0.3);
+            }
+
+            .view-all-btn i {
+                margin-left: 8px;
+                transition: transform 0.3s ease;
+            }
+
+            .view-all-btn:hover i {
+                transform: translateX(5px);
+            }
+
+            @media (max-width: 992px) {
+                .packages-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (max-width: 768px) {
+                .modern-tour-packages {
+                    padding: 60px 0;
+                    background-attachment: scroll;
+                }
+
+                .section-header h2 {
+                    font-size: 2rem;
+                }
+
+                .packages-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .package-media {
+                    height: 180px;
+                }
+            }
+        </style>
 
         <div class="container">
-            <div class="row">
-                <!-- Outstation Trips -->
-                <div class="col-lg-3 col-md-6 col-12 mb-4">
-                    <div class="tx-card__bx tx-card__outstation">
-                        <div class="tx-card__data">
-                            <div class="tx-card__icon">
-                                <div class="tx-card__icon-bx">
-                                    <i class="fas fa-route"></i>
+            <div class="section-header">
+                <h2>Discover Madhya Pradesh</h2>
+                <p>Experience the heart of India with our premium tour packages. Comfortable rides, expert guides, and
+                    unforgettable memories.</p>
+            </div>
+
+            <div class="packages-grid">
+                <!-- Khajuraho Package -->
+                <div class="package-card">
+                    <div class="package-media">
+                        <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80"
+                            alt="Khajuraho Temples">
+                        <div class="package-badge">Heritage</div>
+                        <div class="package-price">₹4,999</div>
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">Khajuraho Temple Tour</h3>
+                        <p class="package-desc">Explore the exquisite UNESCO World Heritage temples with intricate
+                            carvings and rich history.</p>
+                        <div class="package-features">
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-road"></i>
+                                </div>
+                                <span>380 km</span>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <span>6 hours</span>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-car"></i>
+                                </div>
+                                <span>Innova Crysta</span>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-hotel"></i>
+                                </div>
+                                <span>4★ Heritage Stay</span>
+                            </div>
+                        </div>
+                        <button class="package-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Pachmarhi Package -->
+                <div class="package-card">
+                    <div class="package-media">
+                        <img src="https://images.unsplash.com/photo-1605540436563-5bca919ae766?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80"
+                            alt="Pachmarhi">
+                        <div class="package-badge">Hill Station</div>
+                        <div class="package-price">₹3,799</div>
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">Pachmarhi Getaway</h3>
+                        <p class="package-desc">MP's only hill station with breathtaking waterfalls and panoramic views
+                            of Satpura ranges.</p>
+                        <div class="package-features">
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-road"></i>
+                                </div>
+                                <span>260 km</span>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <span>5 hours</span>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-car"></i>
+                                </div>
+                                <span>Marazzo</span>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-hotel"></i>
+                                </div>
+                                <span>3★ Resort</span>
+                            </div>
+                        </div>
+                        <button class="package-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Bandhavgarh Package -->
+                <div class="package-card">
+                    <div class="package-media">
+                        <img src="https://www.blackbucksafarilodge.com/images/the-park-bulackbucks.jpg"
+                            alt="Bandhavgarh">
+                        <div class="package-badge">Wildlife</div>
+                        <div class="package-price">₹5,499</div>
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">Bandhavgarh Safari</h3>
+                        <p class="package-desc">Spot the majestic Royal Bengal Tigers in one of India's best national
+                            parks with expert guides.</p>
+                        <div class="package-features">
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-road"></i>
+                                </div>
+                                <span>200 km</span>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <span>4.5 hours</span>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-car"></i>
+                                </div>
+                                <span>Safari Jeep</span>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-hotel"></i>
+                                </div>
+                                <span>Jungle Resort</span>
+                            </div>
+                        </div>
+                        <button class="package-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Orchha Package -->
+                <div class="package-card">
+                    <div class="package-media">
+                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/d4/f2/fb/caption.jpg?w=500&h=400&s=1"
+                            alt="Orchha">
+                        <div class="package-badge">Heritage</div>
+                        <div class="package-price">₹3,299</div>
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">Orchha Heritage Tour</h3>
+                        <p class="package-desc">Discover ancient temples and palaces along the Betwa river in this
+                            hidden gem of MP.</p>
+                        <div class="package-features">
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-road"></i>
+                                </div>
+                                <span>180 km</span>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <span>3.5 hours</span>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-car"></i>
+                                </div>
+                                <span>Swift Dzire</span>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-hotel"></i>
+                                </div>
+                                <span>3★ Heritage Stay</span>
+                            </div>
+                        </div>
+                        <button class="package-btn">Book Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="view-all">
+                <a href="#" class="view-all-btn">
+                    Explore All Packages <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section>
+        <style>
+            /*==================== TAXI SERVICE CARD COMPONENT ====================*/
+            /* Scoped to only affect elements within taxi-service-section */
+            .taxi-service-section {
+                --tx-text-color: #000000;
+                --tx-bg-color: #282828;
+                --tx-primary-color: #1ecb15;
+                --tx-btn-text-color: #333333;
+                --tx-transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+                font-family: 'Poppins', sans-serif;
+                padding: 100px 0;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .taxi-service-section .tx-container {
+                max-width: 1400px;
+                width: 100%;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            .taxi-service-section .tx-section-header {
+                text-align: center;
+                margin-bottom: 60px;
+                position: relative;
+                z-index: 2;
+            }
+
+            .taxi-service-section .tx-section-header h2 {
+                font-size: 2.8rem;
+                font-weight: 700;
+                background: linear-gradient(90deg, #1ecb15 0%, #0e8a08 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-bottom: 20px;
+            }
+
+            .taxi-service-section .tx-section-header p {
+                color: rgba(0, 0, 0, 0.7);
+                max-width: 700px;
+                margin: 0 auto;
+                font-size: 1.1rem;
+            }
+
+            .taxi-service-section .tx-card__bx {
+                --tx-clr: #1ecb15;
+                height: 420px;
+                width: 100%;
+                overflow: hidden;
+                border-radius: 20px;
+                border-top-left-radius: 80px;
+                position: relative;
+                background: var(--tx-clr);
+                transition: var(--tx-transition);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+                margin-bottom: 30px;
+            }
+
+            .taxi-service-section .tx-card__bx:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 25px 50px rgba(30, 203, 21, 0.3);
+            }
+
+            .taxi-service-section .tx-card__bx .tx-card__data {
+                position: absolute;
+                inset: 10px;
+                border-radius: 10px;
+                background: white;
+                overflow: hidden;
+            }
+
+            .taxi-service-section .tx-card__bx .tx-card__icon {
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-bottom-right-radius: 50%;
+                height: 150px;
+                width: 150px;
+                background: var(--tx-clr);
+            }
+
+            .taxi-service-section .tx-card__bx .tx-card__icon::before {
+                content: '';
+                position: absolute;
+                bottom: -30px;
+                left: 0;
+                height: 30px;
+                width: 30px;
+                border-top-left-radius: 30px;
+                background: transparent;
+                box-shadow: -5px -5px 0 5px var(--tx-clr);
+            }
+
+            .taxi-service-section .tx-card__bx .tx-card__icon::after {
+                content: '';
+                position: absolute;
+                right: -30px;
+                top: 0;
+                height: 30px;
+                width: 30px;
+                border-top-left-radius: 30px;
+                background: transparent;
+                box-shadow: -5px -5px 0 5px var(--tx-clr);
+            }
+
+            .taxi-service-section .tx-card__bx .tx-card__icon .tx-card__icon-bx {
+                position: absolute;
+                inset: 10px;
+                border-radius: 10px;
+                border-top-left-radius: 50%;
+                border-bottom-right-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 60px;
+                background: var(--tx-bg-color);
+                color: var(--tx-clr);
+                transition: var(--tx-transition);
+            }
+
+            .taxi-service-section .tx-card__bx:hover .tx-card__icon .tx-card__icon-bx {
+                background: var(--tx-clr);
+                color: var(--tx-text-color);
+            }
+
+            .taxi-service-section .tx-card__bx .tx-card__content {
+                position: absolute;
+                top: 160px;
+                padding: 20px;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                gap: 20px;
+                color: var(--tx-text-color);
+            }
+
+            .taxi-service-section .tx-card__bx .tx-card__content h3 {
+                font-size: 24px;
+                font-weight: 700;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+            }
+
+            .taxi-service-section .tx-card__bx .tx-card__content p {
+                font-size: 15px;
+                opacity: 0.8;
+                line-height: 1.6;
+            }
+
+            .taxi-service-section .tx-card__bx .tx-card__content a {
+                display: inline-flex;
+                align-self: center;
+                padding: 12px 30px;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-size: 14px;
+                font-weight: 600;
+                border-radius: 30px;
+                border: 2px solid var(--tx-clr);
+                color: var(--tx-btn-text-color);
+                background: var(--tx-clr);
+                transition: var(--tx-transition);
+                letter-spacing: 1px;
+            }
+
+            .taxi-service-section .tx-card__bx .tx-card__content a:hover {
+                background: transparent;
+                color: var(--tx-clr);
+            }
+
+
+
+            /* Background elements */
+            .taxi-service-section .tx-bg-elements {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                overflow: hidden;
+            }
+
+            .taxi-service-section .tx-bg-circle {
+                position: absolute;
+                border-radius: 50%;
+                background: rgba(30, 203, 21, 0.05);
+                filter: blur(60px);
+            }
+
+            .taxi-service-section .tx-bg-circle-1 {
+                width: 400px;
+                height: 400px;
+                top: -100px;
+                left: -100px;
+            }
+
+            .taxi-service-section .tx-bg-circle-2 {
+                width: 600px;
+                height: 600px;
+                bottom: -200px;
+                right: -200px;
+            }
+
+            @media (max-width: 768px) {
+                .taxi-service-section .tx-section-header h2 {
+                    font-size: 2.2rem;
+                }
+
+                .taxi-service-section {
+                    padding: 60px 0;
+                }
+            }
+        </style>
+
+        <section class="taxi-service-section">
+            <!-- Background elements -->
+            <div class="tx-bg-elements">
+                <div class="tx-bg-circle tx-bg-circle-1"></div>
+                <div class="tx-bg-circle tx-bg-circle-2"></div>
+            </div>
+
+            <div class="tx-container">
+                <div class="tx-section-header">
+                    <h2>Premium Taxi Services</h2>
+                    <p>Choose from our exclusive range of transportation solutions tailored to your specific needs</p>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <!-- Outstation Trips -->
+                        <div class="col-lg-3 col-md-6 col-12 mb-4">
+                            <div class="tx-card__bx tx-card__outstation">
+                                <div class="tx-card__data">
+                                    <div class="tx-card__icon">
+                                        <div class="tx-card__icon-bx">
+                                            <i class="fas fa-route"></i>
+                                        </div>
+                                    </div>
+                                    <div class="tx-card__content">
+                                        <h3>Outstation Trips</h3>
+                                        <p>Comfortable long-distance travel with experienced drivers for all your
+                                            outstation needs.</p>
+                                        <a href="#">Book Now</a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="tx-card__content">
-                                <h3>Outstation Trips</h3>
-                                <p>Comfortable long-distance travel with experienced drivers for all your outstation needs.</p>
-                                <a href="#">Book Now</a>
+                        </div>
+
+                        <!-- Corporate Services -->
+                        <div class="col-lg-3 col-md-6 col-12 mb-4">
+                            <div class="tx-card__bx tx-card__corporate">
+                                <div class="tx-card__data">
+                                    <div class="tx-card__icon">
+                                        <div class="tx-card__icon-bx"><i class="fas fa-briefcase"></i></div>
+                                    </div>
+                                    <div class="tx-card__content">
+                                        <h3>Corporate</h3>
+                                        <p>Reliable transportation solutions for your business needs with professional
+                                            chauffeurs.</p>
+                                        <a href="#">Book Now</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <!-- Corporate Services -->
-                <div class="col-lg-3 col-md-6 col-12 mb-4">
-                    <div class="tx-card__bx tx-card__corporate">
-                        <div class="tx-card__data">
-                            <div class="tx-card__icon">
-                                <div class="tx-card__icon-bx"><i class="fas fa-briefcase"></i></div>
-                            </div>
-                            <div class="tx-card__content">
-                                <h3>Corporate</h3>
-                                <p>Reliable transportation solutions for your business needs with professional chauffeurs.</p>
-                                <a href="#">Book Now</a>
+                        <!-- Local Trips -->
+                        <div class="col-lg-3 col-md-6 col-12 mb-4">
+                            <div class="tx-card__bx tx-card__local">
+                                <div class="tx-card__data">
+                                    <div class="tx-card__icon">
+                                        <div class="tx-card__icon-bx"><i class="fas fa-city"></i></div>
+                                    </div>
+                                    <div class="tx-card__content">
+                                        <h3>Local Trips</h3>
+                                        <p>Quick and convenient point-to-point travel within the city at competitive
+                                            rates.</p>
+                                        <a href="#">Book Now</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <!-- Local Trips -->
-                <div class="col-lg-3 col-md-6 col-12 mb-4">
-                    <div class="tx-card__bx tx-card__local">
-                        <div class="tx-card__data">
-                            <div class="tx-card__icon">
-                                <div class="tx-card__icon-bx"><i class="fas fa-city"></i></div>
-                            </div>
-                            <div class="tx-card__content">
-                                <h3>Local Trips</h3>
-                                <p>Quick and convenient point-to-point travel within the city at competitive rates.</p>
-                                <a href="#">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Airport Trips -->
-                <div class="col-lg-3 col-md-6 col-12 mb-4">
-                    <div class="tx-card__bx tx-card__airport">
-                        <div class="tx-card__data">
-                            <div class="tx-card__icon">
-                                <div class="tx-card__icon-bx"><i class="fas fa-plane"></i></div>
-                            </div>
-                            <div class="tx-card__content">
-                                <h3>Airport Trips</h3>
-                                <p>On-time airport transfers with flight tracking and meet & greet services.</p>
-                                <a href="#">Book Now</a>
+                        <!-- Airport Trips -->
+                        <div class="col-lg-3 col-md-6 col-12 mb-4">
+                            <div class="tx-card__bx tx-card__airport">
+                                <div class="tx-card__data">
+                                    <div class="tx-card__icon">
+                                        <div class="tx-card__icon-bx"><i class="fas fa-plane"></i></div>
+                                    </div>
+                                    <div class="tx-card__content">
+                                        <h3>Airport Trips</h3>
+                                        <p>On-time airport transfers with flight tracking and meet & greet services.</p>
+                                        <a href="#">Book Now</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-</section>
-</section>
+
+            <!-- Bootstrap CSS -->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+            <!-- Font Awesome -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+            <!-- Bootstrap JS -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        </section>
+    </section>
+
+
 
 
     
 
-    <style>
+    <section>
+        <style>
         * {
             box-sizing: border-box;
             margin: 0;
@@ -1429,8 +1446,6 @@
             }
         }
     </style>
-
-    <section>
         <main class="main">
             <div class="container">
                 <section class="grid_cards">
@@ -1621,10 +1636,10 @@
                 </section>
             </div>
         </main>
-       </section>
-       
-        <!-- Bootstrap JS Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </section>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
