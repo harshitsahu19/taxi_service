@@ -164,7 +164,7 @@
 
  .feature-icon {
      margin-right: 0.75rem;
-     color: #FFC107;
+     color: #1ecb15;
      font-size: 1.2rem;
  }
 
@@ -796,7 +796,7 @@
  }
 
  .online-booking {
-     color: #ffa500;
+     color: #1ecb15;
      letter-spacing: 1px;
      margin-bottom: 8px;
      font-weight: bold;
@@ -924,6 +924,7 @@
             position: relative;
             padding-bottom: 15px;
             margin-bottom: 20px;
+            color: #1ecb15;
         }
         
         .section-header h1::after {
