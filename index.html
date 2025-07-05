@@ -259,7 +259,7 @@
         </div>
     </section>
     <!-- ONLINE BOOKING SECTION ENDS -->
-  <section style="background-color: #1ecb15;">
+    <section style="background-color: #1ecb15;">
         <style>
             .car-card {
                 border: none;
@@ -579,10 +579,125 @@
     </section>
     <!-- Discover Madhya Pradesh ends  -->
 
+    <section class="contact-section py-5">
+        <style>
+            .contact-section {
+                background-color: #f9f9f9;
+            }
 
-   
+            .contact-heading {
+                color: #1ecb15;
+                font-weight: bold;
+                margin-bottom: 40px;
+            }
 
-   
+            .info-box {
+                background-color: #ffffff;
+                border-radius: 12px;
+                padding: 25px 20px;
+                margin-bottom: 20px;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+                transition: all 0.3s ease;
+                display: flex;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .info-box:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 24px rgba(30, 203, 21, 0.2);
+            }
+
+            .info-icon {
+                font-size: 28px;
+                color: #1ecb15;
+                flex-shrink: 0;
+            }
+
+            .info-content h5 {
+                color: #1ecb15;
+                font-weight: 600;
+                margin: 0 0 5px;
+                font-size: 18px;
+            }
+
+            .info-content p {
+                margin: 0;
+                color: #333;
+                font-size: 15px;
+            }
+
+            .map-container {
+                height: 100%;
+                min-height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .map-container iframe {
+                flex: 1;
+                width: 100%;
+                border: none;
+                border-radius: 12px;
+            }
+
+            @media (max-width: 768px) {
+                .map-container {
+                    height: 300px;
+                    margin-bottom: 30px;
+                }
+            }
+        </style>
+
+        <div class="container">
+            <h2 class="text-center contact-heading">Contact Us</h2>
+            <div class="row align-items-stretch">
+                <div class="col-md-6 d-flex">
+                    <div class="map-container w-100">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3369.233970016552!2d75.86686142481508!3d22.70011372828563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fce211b45095%3A0x3a7adbebe36ded44!2sAnand%20Nagar%2C%20Indore%2C%20Madhya%20Pradesh%20452001!5e1!3m2!1sen!2sin!4v1751685577914!5m2!1sen!2sin"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="info-box">
+                        <div class="info-icon">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+                        <div class="info-content">
+                            <h5>Address</h5>
+                            <p>
+                                Anand Nagar, Bhopal Madhya Pradesh</p>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <div class="info-icon">
+                            <i class="bi bi-envelope-fill"></i>
+                        </div>
+                        <div class="info-content">
+                            <h5>Email</h5>
+                            <p>Jeevanlodhi53@gmail.com
+                            </p>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <div class="info-icon">
+                            <i class="bi bi-telephone-fill"></i>
+                        </div>
+                        <div class="info-content">
+                            <h5>Phone</h5>
+                            <p>+91 62645 96402</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
 
     <!-- Taxi Services From Bhopal List  -->
     <section id="city-list">
@@ -641,7 +756,7 @@
     </section>
     <!-- Taxi Services From Bhopal  ENDS -->
 
-      <section class="position-relative text-white">
+    <section class="position-relative text-white">
         <!-- Hero Section -->
         <div class="hero-bg-lower text-center py-5">
             <div class="container">
@@ -660,175 +775,198 @@
             }
         </style>
     </section>
-    <section class="testimonial-carousel py-5" style="background-color: #f8f9fa;">
-    <style>
-        .testimonial-carousel {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .testimonial-carousel .carousel-indicators {
-            bottom: -50px;
-        }
-        .testimonial-carousel .carousel-indicators [data-bs-target] {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: white;
-            border: 2px solid #1ecb15;
-            margin: 0 5px;
-            opacity: 1;
-            transition: all 0.3s ease;
-        }
-        .testimonial-carousel .carousel-indicators .active {
-            background-color: #1ecb15;
-            border-color: #1ecb15;
-            transform: scale(1.2);
-        }
-        .testimonial-carousel .carousel-control-prev-icon,
-        .testimonial-carousel .carousel-control-next-icon {
-            background-color: #1ecb15;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            background-size: 60%;
-        }
-        .testimonial-carousel .testimonial-card {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            margin: 0 15px;
-            text-align: center;
-            height: 100%;
-            border-top: 4px solid #1ecb15;
-            margin-bottom: 30px; /* Space for indicators */
-        }
-        .testimonial-carousel .testimonial-card .rating {
-            color: #ffc107;
-            font-size: 20px;
-            margin-bottom: 15px;
-        }
-        .testimonial-carousel .testimonial-card .quote {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #555;
-            margin-bottom: 20px;
-            font-style: italic;
-        }
-        .testimonial-carousel .testimonial-card .user-info img {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #1ecb15;
-            margin-bottom: 10px;
-        }
-        .testimonial-carousel .testimonial-card .user-info h5 {
-            color: #333;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        .testimonial-carousel .testimonial-card .user-info p {
-            color: #1ecb15;
-            font-size: 14px;
-            margin: 0;
-        }
-        @media (max-width: 768px) {
-            .testimonial-carousel .testimonial-card {
-                padding: 20px;
-            }
-            .testimonial-carousel .carousel-indicators {
-                bottom: -40px;
-            }
-        }
-    </style>
 
-    <div class="container">
-        <h2 class="text-center mb-5" style="color: #1ecb15;">What Our Customers Say</h2>
-        
-        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <!-- Testimonial 1 -->
-                <div class="carousel-item active">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="testimonial-card">
-                                <div class="rating">
-                                    ★★★★★
+    <section class="testimonial-carousel py-5" style="background-color: #f8f9fa;">
+        <style>
+            .testimonial-carousel {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            .testimonial-carousel .carousel-indicators {
+                bottom: -50px;
+            }
+
+            .testimonial-carousel .carousel-indicators [data-bs-target] {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background-color: white;
+                border: 2px solid #1ecb15;
+                margin: 0 5px;
+                opacity: 1;
+                transition: all 0.3s ease;
+            }
+
+            .testimonial-carousel .carousel-indicators .active {
+                background-color: #1ecb15;
+                border-color: #1ecb15;
+                transform: scale(1.2);
+            }
+
+            .testimonial-carousel .carousel-control-prev-icon,
+            .testimonial-carousel .carousel-control-next-icon {
+                background-color: #1ecb15;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                background-size: 60%;
+            }
+
+            .testimonial-carousel .testimonial-card {
+                background: white;
+                border-radius: 10px;
+                padding: 30px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+                margin: 0 15px;
+                text-align: center;
+                height: 100%;
+                border-top: 4px solid #1ecb15;
+                margin-bottom: 30px;
+                /* Space for indicators */
+            }
+
+            .testimonial-carousel .testimonial-card .rating {
+                color: #ffc107;
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+
+            .testimonial-carousel .testimonial-card .quote {
+                font-size: 16px;
+                line-height: 1.6;
+                color: #555;
+                margin-bottom: 20px;
+                font-style: italic;
+            }
+
+            .testimonial-carousel .testimonial-card .user-info img {
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 3px solid #1ecb15;
+                margin-bottom: 10px;
+            }
+
+            .testimonial-carousel .testimonial-card .user-info h5 {
+                color: #333;
+                font-weight: 600;
+                margin-bottom: 5px;
+            }
+
+            .testimonial-carousel .testimonial-card .user-info p {
+                color: #1ecb15;
+                font-size: 14px;
+                margin: 0;
+            }
+
+            @media (max-width: 768px) {
+                .testimonial-carousel .testimonial-card {
+                    padding: 20px;
+                }
+
+                .testimonial-carousel .carousel-indicators {
+                    bottom: -40px;
+                }
+            }
+        </style>
+
+        <div class="container">
+            <h2 class="text-center mb-5" style="color: #1ecb15;">What Our Customers Say</h2>
+
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- Testimonial 1 -->
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="testimonial-card">
+                                    <div class="rating">
+                                        ★★★★★
+                                    </div>
+                                    <p class="quote">
+                                        "The best taxi service I've ever used! The app is so easy to use and the drivers
+                                        are always punctual and polite. I use it every day for my commute."
+                                    </p>
+                                    <div class="user-info">
+                                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
+                                        <h5>Sarah Johnson</h5>
+                                        <p>Regular Customer</p>
+                                    </div>
                                 </div>
-                                <p class="quote">
-                                    "The best taxi service I've ever used! The app is so easy to use and the drivers are always punctual and polite. I use it every day for my commute."
-                                </p>
-                                <div class="user-info">
-                                    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
-                                    <h5>Sarah Johnson</h5>
-                                    <p>Regular Customer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="testimonial-card">
+                                    <div class="rating">
+                                        ★★★★☆
+                                    </div>
+                                    <p class="quote">
+                                        "I was impressed with how clean and comfortable the car was. The driver knew the
+                                        best routes to avoid traffic. Will definitely book again for my airport
+                                        transfers."
+                                    </p>
+                                    <div class="user-info">
+                                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                                        <h5>Michael Chen</h5>
+                                        <p>Business Traveler</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="testimonial-card">
+                                    <div class="rating">
+                                        ★★★★★
+                                    </div>
+                                    <p class="quote">
+                                        "As a senior citizen, I appreciate the helpful drivers who assist me with my
+                                        groceries. The service is reliable and the fares are reasonable compared to
+                                        other companies."
+                                    </p>
+                                    <div class="user-info">
+                                        <img src="https://randomuser.me/api/portraits/women/63.jpg"
+                                            alt="Margaret Williams">
+                                        <h5>Margaret Williams</h5>
+                                        <p>Senior Citizen</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Testimonial 2 -->
-                <div class="carousel-item">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="testimonial-card">
-                                <div class="rating">
-                                    ★★★★☆
-                                </div>
-                                <p class="quote">
-                                    "I was impressed with how clean and comfortable the car was. The driver knew the best routes to avoid traffic. Will definitely book again for my airport transfers."
-                                </p>
-                                <div class="user-info">
-                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
-                                    <h5>Michael Chen</h5>
-                                    <p>Business Traveler</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+                <!-- Carousel Indicators -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0"
+                        class="active"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"></button>
                 </div>
-                
-                <!-- Testimonial 3 -->
-                <div class="carousel-item">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="testimonial-card">
-                                <div class="rating">
-                                    ★★★★★
-                                </div>
-                                <p class="quote">
-                                    "As a senior citizen, I appreciate the helpful drivers who assist me with my groceries. The service is reliable and the fares are reasonable compared to other companies."
-                                </p>
-                                <div class="user-info">
-                                    <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Margaret Williams">
-                                    <h5>Margaret Williams</h5>
-                                    <p>Senior Citizen</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            
-            <!-- Carousel Indicators -->
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"></button>
-            </div>
-            
-            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
-    </div>
-</section>
+    </section>
 
 
     <footer class="bg-light-green py-5">
