@@ -5,7 +5,202 @@
      --dark: #222222;
  }
 
- 
+
+
+ /* Navigation bar */
+
+ :root {
+     --primary: #1ecb15;
+     --primary-dark: #16a00e;
+     --dark: #222;
+     --light: #fff;
+     --gray: #f5f5f5;
+     --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+ }
+
+
+
+ /* Combined Navigation Container - Made sticky */
+ .nav-container {
+     position: sticky;
+     top: 0;
+     z-index: 1000;
+     width: 100%;
+ }
+
+ /* Top Bar - Updated with only contact info */
+ .top-bar {
+     background-color: var(--primary);
+     color: var(--light);
+     padding: 0.5rem 2rem;
+     display: flex;
+     justify-content: center;
+     /* Changed to center */
+     align-items: center;
+     font-size: 0.9rem;
+ }
+
+ .top-contact {
+     display: flex;
+     gap: 1.5rem;
+ }
+
+ .top-contact-item {
+     display: flex;
+     align-items: center;
+     gap: 0.5rem;
+ }
+
+ .top-contact-item i {
+     color: var(--light);
+     opacity: 0.9;
+ }
+
+ /* Main Navbar */
+ .navbar {
+     background-color: var(--light);
+     padding: 0.8rem 2rem;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     box-shadow: var(--shadow);
+ }
+
+ /* Logo with Image */
+ .logo {
+     display: flex;
+     align-items: center;
+ }
+
+ .logo img {
+     height: 60px;
+     width: auto;
+     object-fit: contain;
+ }
+
+ .nav-links {
+     display: flex;
+     gap: 2rem;
+     align-items: center;
+ }
+
+ .nav-links a {
+     color: var(--dark);
+     text-decoration: none;
+     font-weight: 500;
+     transition: color 0.3s;
+     position: relative;
+ }
+
+ .nav-links a:hover {
+     color: var(--primary);
+ }
+
+ .nav-links a::after {
+     content: '';
+     position: absolute;
+     bottom: -5px;
+     left: 0;
+     width: 0;
+     height: 2px;
+     background-color: var(--primary);
+     transition: width 0.3s;
+ }
+
+ .nav-links a:hover::after {
+     width: 100%;
+ }
+
+ .book-now-btn {
+     background-color: var(--primary);
+     color: var(--light);
+     padding: 0.7rem 1.5rem;
+     border-radius: 50px;
+     font-weight: 600;
+     transition: all 0.3s;
+     border: none;
+     cursor: pointer;
+ }
+
+ .book-now-btn:hover {
+     background-color: var(--primary-dark);
+     transform: translateY(-2px);
+     box-shadow: 0 6px 12px rgba(30, 203, 21, 0.2);
+ }
+
+ /* Mobile Menu Styles */
+ .hamburger {
+     display: none;
+     cursor: pointer;
+     color: var(--dark);
+     font-size: 1.5rem;
+     z-index: 1001;
+     transition: transform 0.3s;
+ }
+
+ .close-btn {
+     display: none;
+     position: absolute;
+     top: 1.5rem;
+     right: 2rem;
+     font-size: 1.8rem;
+     color: var(--dark);
+     cursor: pointer;
+ }
+
+ /* Responsive Styles */
+ @media (max-width: 992px) {
+     .nav-links {
+         gap: 1.5rem;
+     }
+ }
+
+ @media (max-width: 768px) {
+     .top-bar {
+         display: none;
+     }
+
+     .logo img {
+         height: 50px;
+     }
+
+     .nav-links {
+         position: fixed;
+         top: 0;
+         left: -100%;
+         width: 80%;
+         height: 100vh;
+         background-color: var(--light);
+         flex-direction: column;
+         gap: 2rem;
+         padding: 5rem 2rem;
+         transition: left 0.3s ease-in-out;
+         box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+         z-index: 1000;
+     }
+
+     .nav-links.active {
+         left: 0;
+     }
+
+     .hamburger {
+         display: block;
+     }
+
+     .close-btn {
+         display: block;
+     }
+
+     .navbar {
+         padding: 1rem;
+     }
+ }
+
+ @media (max-width: 480px) {
+     .logo img {
+         height: 50px;
+     }
+ }
 
 
 
@@ -13,13 +208,24 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+ /* hero section */
  .hero-section {
      position: relative;
      overflow: hidden;
      background-color: #000;
      color: white;
-     height: 90h;
-     min-height: 650px;
+     height: 82.5vh;
+     /* min-height: 650px; */
      display: flex;
      align-items: center;
  }
@@ -104,7 +310,7 @@
      max-width: 100%;
      height: auto;
      max-height: 400px;
-      transform: scale(1.1);
+     transform: scale(1.1);
      object-fit: contain;
      animation: float 3s ease-in-out infinite;
      filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
@@ -274,98 +480,642 @@
 
 
 
- /*  */
-
- .services-section {
-     padding: 5rem 0;
-     background-color: #f8f9fa;
+ /*Premium Taxi Services section  */
+ .taxi-service-section {
+     --tx-text-color: #000000;
+     --tx-bg-color: #282828;
+     --tx-primary-color: #1ecb15;
+     --tx-btn-text-color: #333333;
+     --tx-transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+     font-family: 'Poppins', sans-serif;
+     padding: 100px 0;
      position: relative;
      overflow: hidden;
  }
 
- /* Road design elements */
- .road-line,
- .taxi-dots,
- .moving-taxi {
-     position: absolute;
-     left: 0;
+ .taxi-service-section .tx-container {
+     max-width: 1400px;
      width: 100%;
+     margin: 0 auto;
+     padding: 0 20px;
  }
 
- .road-line {
-     height: 2px;
-     background: repeating-linear-gradient(to right,
-             #333 0,
-             #333 20px,
-             transparent 20px,
-             transparent 40px);
-     opacity: 0.2;
-     z-index: 1;
- }
-
- .taxi-dots {
-     height: 10px;
-     background: radial-gradient(circle, #f9d713 2px, transparent 3px);
-     background-size: 20px 20px;
-     opacity: 0.5;
-     z-index: 1;
- }
-
- .moving-taxi {
-     width: 80px;
-     height: 40px;
-     z-index: 2;
-     animation: drive 15s linear infinite;
- }
-
- .moving-taxi::before {
-     content: '';
-     position: absolute;
-     width: 200px;
-     height: 40px;
-     top: -20px;
-     left: 0;
-     background-image: url('./asssets/img/movingTaxi.png');
-     background-size: contain;
-     background-repeat: no-repeat;
-     background-position: center;
- }
-
- @keyframes drive {
-     0% {
-         transform: translateX(0);
-     }
-
-     100% {
-         transform: translateX(calc(100vw + 100px));
-     }
- }
-
- .section-header {
+ .taxi-service-section .tx-section-header {
      text-align: center;
-     margin-bottom: 3rem;
+     margin-bottom: 60px;
      position: relative;
      z-index: 2;
  }
 
- .section-subtitle {
-     color: #1ecb15;
-     font-weight: 600;
-     text-transform: uppercase;
-     letter-spacing: 1px;
-     margin-bottom: 1rem;
+ .taxi-service-section .tx-section-header h2 {
+     font-size: 2.8rem;
+     font-weight: 700;
+     background: linear-gradient(90deg, #1ecb15 0%, #0e8a08 100%);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     margin-bottom: 20px;
+ }
+
+ .taxi-service-section .tx-section-header p {
+     color: rgba(0, 0, 0, 0.7);
+     max-width: 700px;
+     margin: 0 auto;
      font-size: 1.1rem;
  }
 
- .section-title {
-     font-size: 2.5rem;
-     font-weight: 700;
-     margin-bottom: 1.5rem;
-     color: #333;
+ .taxi-service-section .tx-card__bx {
+     --tx-clr: #1ecb15;
+     height: 420px;
+     width: 100%;
+     overflow: hidden;
+     border-radius: 20px;
+     border-top-left-radius: 80px;
      position: relative;
+     background: var(--tx-clr);
+     transition: var(--tx-transition);
+     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+     margin-bottom: 30px;
  }
 
- .section-title:after {
+ .taxi-service-section .tx-card__bx:hover {
+     transform: translateY(-10px);
+     box-shadow: 0 25px 50px rgba(30, 203, 21, 0.3);
+ }
+
+ .taxi-service-section .tx-card__bx .tx-card__data {
+     position: absolute;
+     inset: 10px;
+     border-radius: 10px;
+     background: white;
+     overflow: hidden;
+ }
+
+ .taxi-service-section .tx-card__bx .tx-card__icon {
+     position: absolute;
+     top: 0;
+     left: 0;
+     border-bottom-right-radius: 50%;
+     height: 150px;
+     width: 150px;
+     background: var(--tx-clr);
+ }
+
+ .taxi-service-section .tx-card__bx .tx-card__icon::before {
+     content: '';
+     position: absolute;
+     bottom: -30px;
+     left: 0;
+     height: 30px;
+     width: 30px;
+     border-top-left-radius: 30px;
+     background: transparent;
+     box-shadow: -5px -5px 0 5px var(--tx-clr);
+ }
+
+ .taxi-service-section .tx-card__bx .tx-card__icon::after {
+     content: '';
+     position: absolute;
+     right: -30px;
+     top: 0;
+     height: 30px;
+     width: 30px;
+     border-top-left-radius: 30px;
+     background: transparent;
+     box-shadow: -5px -5px 0 5px var(--tx-clr);
+ }
+
+ .taxi-service-section .tx-card__bx .tx-card__icon .tx-card__icon-bx {
+     position: absolute;
+     inset: 10px;
+     border-radius: 10px;
+     border-top-left-radius: 50%;
+     border-bottom-right-radius: 50%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: 60px;
+     background: var(--tx-bg-color);
+     color: var(--tx-clr);
+     transition: var(--tx-transition);
+ }
+
+ .taxi-service-section .tx-card__bx:hover .tx-card__icon .tx-card__icon-bx {
+     background: var(--tx-clr);
+     color: var(--tx-text-color);
+ }
+
+ .taxi-service-section .tx-card__bx .tx-card__content {
+     position: absolute;
+     top: 160px;
+     padding: 20px;
+     text-align: center;
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     gap: 20px;
+     color: var(--tx-text-color);
+ }
+
+ .taxi-service-section .tx-card__bx .tx-card__content h3 {
+     font-size: 24px;
+     font-weight: 700;
+     letter-spacing: 1px;
+     text-transform: uppercase;
+ }
+
+ .taxi-service-section .tx-card__bx .tx-card__content p {
+     font-size: 15px;
+     opacity: 0.8;
+     line-height: 1.6;
+ }
+
+ .taxi-service-section .tx-card__bx .tx-card__content a {
+     display: inline-flex;
+     align-self: center;
+     padding: 12px 30px;
+     text-decoration: none;
+     text-transform: uppercase;
+     font-size: 14px;
+     font-weight: 600;
+     border-radius: 30px;
+     border: 2px solid var(--tx-clr);
+     color: var(--tx-btn-text-color);
+     background: var(--tx-clr);
+     transition: var(--tx-transition);
+     letter-spacing: 1px;
+ }
+
+ .taxi-service-section .tx-card__bx .tx-card__content a:hover {
+     background: transparent;
+     color: var(--tx-clr);
+ }
+
+
+
+ /* Background elements */
+ .taxi-service-section .tx-bg-elements {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     top: 0;
+     left: 0;
+     z-index: 1;
+     overflow: hidden;
+ }
+
+ .taxi-service-section .tx-bg-circle {
+     position: absolute;
+     border-radius: 50%;
+     background: rgba(30, 203, 21, 0.05);
+     filter: blur(60px);
+ }
+
+ .taxi-service-section .tx-bg-circle-1 {
+     width: 400px;
+     height: 400px;
+     top: -100px;
+     left: -100px;
+ }
+
+ .taxi-service-section .tx-bg-circle-2 {
+     width: 600px;
+     height: 600px;
+     bottom: -200px;
+     right: -200px;
+ }
+
+ @media (max-width: 768px) {
+     .taxi-service-section .tx-section-header h2 {
+         font-size: 2.2rem;
+     }
+
+     .taxi-service-section {
+         padding: 60px 0;
+     }
+ }
+
+
+
+
+
+
+
+
+
+
+
+ .main {
+     padding: 16px;
+     width: 100%;
+     min-height: 100vh;
+ }
+
+
+
+
+ .card_ui {
+     border-radius: 12px;
+     padding: 15px;
+     transition: all 0.3s ease;
+     border: 2px solid #1ecb15;
+     background: white;
+     position: relative;
+     overflow: hidden;
+     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+     height: 100%;
+ }
+
+ .card_ui:hover {
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+     transform: translateY(-5px);
+ }
+
+
+ .card_ui:hover::before {
+     height: 6px;
+ }
+
+ .car_header {
+     align-items: center;
+     display: flex;
+     justify-content: space-between;
+     margin-bottom: 8px;
+ }
+
+ .car_header_status {
+     display: flex;
+     gap: 8px;
+ }
+
+ .status_rating {
+     border: 1px solid #f1f1f1;
+     border-radius: 8px;
+     padding: 3px 8px;
+     transition: all 0.3s ease;
+     display: flex;
+     align-items: center;
+     font-size: 0.8rem;
+ }
+
+ .status_rating:hover {
+     background: #f8f9fa;
+ }
+
+ .status_rating_star {
+     color: #ffba1e;
+     margin-right: 3px;
+     font-size: 0.8rem;
+ }
+
+ .status_rating_number_comments {
+     color: #7f8388;
+     font-size: 0.75rem;
+ }
+
+ .status_disponibility {
+     border-radius: 8px;
+     padding: 3px 8px;
+     font-weight: 500;
+     font-size: 0.75rem;
+ }
+
+ .status_available {
+     background: rgb(15 167 35 / 10%);
+ }
+
+ .status_not_available {
+     background: rgb(201 11 11 / 10%);
+ }
+
+ .status_available span {
+     color: #0fa723;
+ }
+
+ .status_not_available span {
+     color: #c90b0b;
+ }
+
+ .button_like {
+     background: none;
+     border: none;
+     height: 28px;
+     width: 28px;
+     cursor: pointer;
+     position: relative;
+     transition: all 0.2s ease;
+ }
+
+ .button_like:hover {
+     transform: scale(1.1);
+ }
+
+ .button_like i {
+     font-size: 1.1rem;
+     transition: all 0.2s ease;
+ }
+
+ .button_like:hover i {
+     color: #c90b0b;
+ }
+
+ .like_icon {
+     animation: animateHeart .4s ease;
+     color: #c90b0b;
+ }
+
+ @keyframes animateHeart {
+     0% {
+         transform: scale(1);
+     }
+
+     33% {
+         transform: scale(1.2);
+     }
+
+     66% {
+         transform: scale(0.8);
+     }
+
+     100% {
+         transform: scale(1);
+     }
+ }
+
+ .car_body_img_container {
+     padding: 12px 0;
+     position: relative;
+     margin-bottom: 5px;
+ }
+
+ .car_img_content_link {
+     display: block;
+     transition: all 0.2s ease;
+ }
+
+ .car_img_content {
+     display: flex;
+     justify-content: center;
+     background: linear-gradient(135deg, #1ecb15, #0fa723);
+     border-radius: 8px;
+     padding: 15px;
+     transition: all 0.2s ease;
+     position: relative;
+     overflow: hidden;
+ }
+
+ .card_ui:hover .car_img_content {
+     transform: scale(1.01);
+ }
+
+ .car_img_content::before {
+     content: '';
+     position: absolute;
+     top: -50%;
+     left: -50%;
+     width: 200%;
+     height: 200%;
+     background: linear-gradient(to bottom right,
+             rgba(255, 255, 255, 0.3),
+             rgba(255, 255, 255, 0));
+     transform: rotate(30deg);
+     transition: all 0.4s ease;
+ }
+
+ .card_ui:hover .car_img_content::before {
+     animation: shine 1.2s infinite;
+ }
+
+ @keyframes shine {
+     0% {
+         left: -50%;
+         top: -50%;
+     }
+
+     100% {
+         left: 150%;
+         top: 150%;
+     }
+ }
+
+ .car_img_content img {
+     width: 75%;
+     transform: scale(1.5);
+     transition: all 0.3s ease;
+     filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.1));
+ }
+
+ .car_img_content_link:hover img {
+     transform: scale(1.6);
+ }
+
+ .car_name {
+     color: #7f8388;
+     font-size: 0.8rem;
+     margin-bottom: 2px;
+ }
+
+ .car_model {
+     font-size: 1.1rem;
+     font-weight: 600;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     white-space: nowrap;
+     transition: all 0.2s ease;
+     margin-bottom: 3px;
+     color: #333;
+ }
+
+ .car_model_link:hover .car_model {
+     color: #1ecb15;
+ }
+
+ .car_price_container {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     flex-wrap: wrap;
+     gap: 5px;
+     margin-bottom: 5px;
+ }
+
+ .car_price {
+     font-size: 1.1rem;
+     font-weight: 700;
+     color: #1ecb15;
+     white-space: nowrap;
+ }
+
+ .car_price_time {
+     color: #7f8388;
+     font-size: 0.8rem;
+     font-weight: 400;
+ }
+
+ .car_footer {
+     border-top: 1px solid rgba(162, 166, 171, 0.2);
+
+ }
+
+ .car_list_characteristics {
+     display: grid;
+     gap: 10px;
+     grid-template-columns: repeat(3, 1fr);
+ }
+
+ .car_list_characteristics li {
+     list-style: none;
+     overflow: hidden;
+     display: flex;
+     align-items: center;
+     gap: 5px;
+     transition: all 0.2s ease;
+     padding: 3px;
+     border-radius: 4px;
+ }
+
+ .car_list_characteristics li:hover {
+     background: rgba(30, 203, 21, 0.1);
+ }
+
+ .car_list_characteristics li i {
+     color: #1ecb15;
+     font-size: 0.9rem;
+ }
+
+ .car_list_characteristics li span {
+     color: #7f8388;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     white-space: nowrap;
+     font-size: 0.75rem;
+ }
+
+ .book_now_btn {
+     display: block;
+     width: 100%;
+     padding: 8px;
+     margin-top: 12px;
+     background: linear-gradient(135deg, #1ecb15, #0fa723);
+     color: white;
+     border: none;
+     border-radius: 6px;
+     font-weight: 500;
+     font-size: 0.9rem;
+     cursor: pointer;
+     transition: all 0.2s ease;
+     text-align: center;
+     box-shadow: 0 2px 5px rgba(30, 203, 21, 0.2);
+ }
+
+ .book_now_btn:hover {
+     transform: translateY(-2px);
+     box-shadow: 0 5px 10px rgba(30, 203, 21, 0.3);
+ }
+
+ .book_now_btn:active {
+     transform: translateY(0);
+ }
+
+ .status_not_available .book_now_btn {
+     background: #c90b0b;
+     box-shadow: 0 2px 5px rgba(201, 11, 11, 0.2);
+     cursor: not-allowed;
+     opacity: 0.7;
+ }
+
+ .status_not_available .book_now_btn:hover {
+     box-shadow: 0 2px 5px rgba(201, 11, 11, 0.2);
+     transform: none;
+ }
+
+
+
+ .tag {
+     position: absolute;
+     top: 10px;
+     left: 10px;
+     background: #ffba1e;
+     color: white;
+     padding: 2px 8px;
+     border-radius: 15px;
+     font-size: 0.65rem;
+     font-weight: 600;
+     z-index: 2;
+ }
+
+ @media (max-width: 991px) {
+     .main {
+         height: auto;
+     }
+
+     .grid_cards {
+         grid-template-columns: repeat(2, 1fr);
+     }
+ }
+
+ @media (max-width: 767px) {
+     .grid_cards {
+         grid-template-columns: 1fr;
+     }
+
+     .card_ui {
+         padding: 12px;
+     }
+ }
+
+
+
+
+
+ /* Unique Tour Packages Section */
+ .ctb-tour-packages {
+     position: relative;
+     padding: 80px 0;
+     font-family: 'Poppins', sans-serif;
+     overflow: hidden;
+ }
+
+ /* Background Image with Dark Overlay */
+ .ctb-tour-packages::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background:
+         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+         url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+     background-size: cover;
+     background-position: center;
+     background-attachment: fixed;
+     z-index: 0;
+ }
+
+ .ctb-container {
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 0 20px;
+     position: relative;
+     z-index: 1;
+ }
+
+ .ctb-section-header {
+     text-align: center;
+     margin-bottom: 50px;
+ }
+
+ .ctb-section-header h2 {
+     color: #1ecb15;
+     font-size: 2.5rem;
+     font-weight: 700;
+     margin-bottom: 15px;
+     position: relative;
+     display: inline-block;
+     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+ }
+
+ .ctb-section-header h2::after {
      content: '';
      position: absolute;
      bottom: -10px;
@@ -373,135 +1123,228 @@
      transform: translateX(-50%);
      width: 80px;
      height: 4px;
-     background: #f9d713;
+     background-color: #1ecb15;
      border-radius: 2px;
  }
 
- .section-description {
+ .ctb-section-header p {
+     color: rgba(255, 255, 255, 0.9);
+     font-size: 1.1rem;
      max-width: 700px;
      margin: 0 auto;
-     color: #666;
-     font-size: 1.1rem;
+     line-height: 1.6;
+     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+ }
+
+ .ctb-packages-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+     gap: 25px;
+ }
+
+ .ctb-package-card {
+     background: white;
+     border-radius: 16px;
+     overflow: hidden;
+     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+     position: relative;
+     z-index: 1;
+     border: 2px solid rgba(30, 203, 21, 0.1);
+ }
+
+ .ctb-package-card:hover {
+     transform: translateY(-10px);
+     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+     border-color: rgba(30, 203, 21, 0.3);
+ }
+
+ .ctb-package-media {
+     height: 200px;
+     position: relative;
+     overflow: hidden;
+ }
+
+ .ctb-package-media img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     transition: transform 0.8s ease;
+ }
+
+ .ctb-package-card:hover .ctb-package-media img {
+     transform: scale(1.1);
+ }
+
+ .ctb-package-badge {
+     position: absolute;
+     top: 15px;
+     left: 15px;
+     background-color: #1ecb15;
+     color: white;
+     padding: 5px 15px;
+     border-radius: 20px;
+     font-size: 0.8rem;
+     font-weight: 600;
+     box-shadow: 0 4px 10px rgba(30, 203, 21, 0.3);
+ }
+
+ .ctb-package-price {
+     position: absolute;
+     bottom: 15px;
+     right: 15px;
+     background: rgba(0, 0, 0, 0.7);
+     color: white;
+     padding: 5px 15px;
+     border-radius: 20px;
+     font-size: 0.9rem;
+     font-weight: 600;
+     backdrop-filter: blur(5px);
+ }
+
+ .ctb-package-content {
+     padding: 20px;
+ }
+
+ .ctb-package-title {
+     font-size: 1.2rem;
+     font-weight: 700;
+     color: #1a2e35;
+     margin-bottom: 10px;
+ }
+
+ .ctb-package-desc {
+     font-size: 0.9rem;
+     color: #5a6f7b;
+     margin-bottom: 20px;
      line-height: 1.6;
  }
 
- .cards-container {
+ .ctb-package-features {
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     gap: 12px;
+     margin-bottom: 20px;
+ }
+
+ .ctb-feature {
      display: flex;
-     justify-content: center;
-     flex-wrap: wrap;
-     gap: 2rem;
-     margin-top: 3rem;
-     position: relative;
-     z-index: 2;
+     align-items: center;
+     font-size: 0.8rem;
  }
 
- .feature-card {
-     background: white;
-     border-radius: 12px;
-     padding: 2.5rem;
-     width: 100%;
-     max-width: 350px;
-     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-     transition: all 0.4s ease;
-     text-align: center;
-     position: relative;
-     overflow: hidden;
-     border-top: 4px solid #f9d713;
- }
-
- .feature-card::before {
-     content: '';
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 5px;
-     background: linear-gradient(90deg, #f9d713, #1ecb15);
-     transform: scaleX(0);
-     transform-origin: left;
-     transition: transform 0.5s ease;
- }
-
- .feature-card:hover {
-     transform: translateY(-10px);
-     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
- }
-
- .feature-card:hover::before {
-     transform: scaleX(1);
- }
-
- .card-icon {
-     width: 80px;
-     height: 80px;
-     margin: 0 auto 1.5rem;
-     background: linear-gradient(135deg, #f9d713 0%, #f8c510 100%);
+ .ctb-feature-icon {
+     width: 24px;
+     height: 24px;
+     background: rgba(30, 203, 21, 0.1);
+     color: #1ecb15;
      border-radius: 50%;
      display: flex;
      align-items: center;
      justify-content: center;
+     margin-right: 10px;
+     transition: all 0.3s ease;
+ }
+
+ .ctb-package-card:hover .ctb-feature-icon {
+     background: #1ecb15;
      color: white;
-     font-size: 2rem;
-     box-shadow: 0 5px 15px rgba(249, 215, 19, 0.3);
+     transform: rotate(15deg);
  }
 
- .payment-icon {
-     background: linear-gradient(135deg, #f9d713 0%, #e6b905 100%);
+ .ctb-package-btn {
+     background-color: #1ecb15;
+     color: white;
+     border: none;
+     width: 100%;
+     padding: 12px;
+     border-radius: 8px;
+     font-size: 0.9rem;
+     font-weight: 600;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     position: relative;
+     overflow: hidden;
  }
 
- .safety-icon {
-     background: linear-gradient(135deg, #1ecb15 0%, #18a810 100%);
+ .ctb-package-btn:hover {
+     transform: translateY(-3px);
+     box-shadow: 0 8px 20px rgba(30, 203, 21, 0.3);
  }
 
- .digital-icon {
-     background: linear-gradient(135deg, #333 0%, #555 100%);
+ .ctb-package-btn::after {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: -100%;
+     width: 100%;
+     height: 100%;
+     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+     transition: 0.5s;
  }
 
- .card-title {
-     font-size: 1.5rem;
-     font-weight: 700;
-     margin-bottom: 1rem;
-     color: #333;
+ .ctb-package-btn:hover::after {
+     left: 100%;
  }
 
- .card-text {
-     color: #666;
-     line-height: 1.6;
+ .ctb-view-all {
+     text-align: center;
+     margin-top: 50px;
  }
 
- /* Position the road elements below cards visually */
- .below-cards {
-     bottom: 10%;
+ .ctb-view-all-btn {
+     display: inline-flex;
+     align-items: center;
+     color: white;
+     font-weight: 600;
+     font-size: 1rem;
+     text-decoration: none;
+     padding: 12px 30px;
+     border-radius: 30px;
+     border: 2px solid white;
+     transition: all 0.3s ease;
+     background-color: rgba(255, 255, 255, 0.1);
+     backdrop-filter: blur(5px);
+ }
+
+ .ctb-view-all-btn:hover {
+     background: #1ecb15;
+     border-color: #1ecb15;
+     transform: translateY(-3px);
+     box-shadow: 0 5px 15px rgba(30, 203, 21, 0.3);
+ }
+
+ .ctb-view-all-btn i {
+     margin-left: 8px;
+     transition: transform 0.3s ease;
+ }
+
+ .ctb-view-all-btn:hover i {
+     transform: translateX(5px);
  }
 
  @media (max-width: 992px) {
-     .cards-container {
-         flex-direction: column;
-         align-items: center;
-     }
-
-     .feature-card {
-         max-width: 400px;
-     }
-
-     .below-cards {
-         bottom: 8%;
+     .ctb-packages-grid {
+         grid-template-columns: repeat(2, 1fr);
      }
  }
 
  @media (max-width: 768px) {
-     .services-section {
-         padding: 3rem 0;
+     .ctb-tour-packages {
+         padding: 60px 0;
+         background-attachment: scroll;
      }
 
-     .section-title {
+     .ctb-section-header h2 {
          font-size: 2rem;
      }
 
-     .road-line,
-     .taxi-dots,
-     .moving-taxi {
-         display: none;
+     .ctb-packages-grid {
+         grid-template-columns: 1fr;
+     }
+
+     .ctb-package-media {
+         height: 180px;
      }
  }
 
@@ -515,7 +1358,119 @@
 
 
 
+ #city-list {
+     padding: 50px 20px;
+     background: #39d131;
+     text-align: center;
 
+     margin: 0 auto;
+ }
+
+ .city-list-title {
+     font-size: 2rem;
+     color: #ffffff;
+     margin-bottom: 30px;
+     position: relative;
+     display: inline-block;
+ }
+
+ .city-list-title:after {
+     content: '';
+     position: absolute;
+     width: 50%;
+     height: 3px;
+     background: #ffffff;
+     bottom: -10px;
+     left: 25%;
+ }
+
+ .city-list-container {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 15px;
+     margin: 0 auto;
+ }
+
+ .city-pill {
+     background: white;
+     padding: 12px 25px;
+     border-radius: 30px;
+     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+     font-weight: 500;
+     color: #555;
+     transition: all 0.3s ease;
+     border: 1px solid #eee;
+     cursor: pointer;
+ }
+
+ .city-pill:hover {
+     color: #1ecb15;
+     border-color: #1ecb15;
+     transform: translateY(-2px);
+     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+ }
+
+ .city-pill .from {
+     color: #999;
+ }
+
+ .city-pill .to {
+     font-weight: 600;
+ }
+
+ @media (max-width: 768px) {
+     .city-list-title {
+         font-size: 1.8rem;
+     }
+
+     .city-pill {
+         padding: 10px 20px;
+     }
+ }
+
+
+
+
+
+
+
+ .bg-brand {
+            background-color: var(--brand-color) !important;
+        }
+
+        .text-brand {
+            color: var(--brand-color) !important;
+        }
+
+
+        .border-brand {
+            border-color: var(--brand-color) !important;
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+
+        .hover-padding:hover {
+            padding-left: 5px;
+            color: var(--brand-color) !important;
+        }
+
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transition: all 0.3s ease;
+            transform: translateY(-3px);
+        }
+
+        .transition-all {
+            transition: all 0.3s ease;
+        }
 
 
 
@@ -524,7 +1479,7 @@
 
 
  footer {
-     background-color: black;
+     background-color: #77ff60;
      color: white;
      padding: 40px 0 20px;
      position: relative;
@@ -916,90 +1871,90 @@
  }
 
 
-   .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-header h1 {
-            position: relative;
-            padding-bottom: 15px;
-            margin-bottom: 20px;
-            color: #1ecb15;
-        }
-        
-        .section-header h1::after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 4px;
-            background-color: var(--primary);
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 2px;
-        }
-        
-        .category-title {
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #dee2e6;
-        }
-        
-        .vehicle-card {
-            border: none;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            height: 100%;
-        }
-        
-        .vehicle-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .vehicle-img {
-            height: 180px;
-            object-fit: cover;
-        }
-        
-        .highlight-tag {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background-color: var(--accent);
-            color: var(--dark);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-        
-        .vehicle-name {
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-        
-        .vehicle-price {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-        
-        .book-btn {
-            background-color: var(--primary);
-            color: var(--white);
-            font-weight: 600;
-            width: 100%;
-        }
-        
-        .book-btn:hover {
-            background-color: var(--dark);
-            color: var(--white);
-        }
-        
-        .category-badge {
-            background-color: var(--primary);
-            font-size: 0.9rem;
-        }
+ .section-header {
+     text-align: center;
+     margin-bottom: 50px;
+ }
+
+ .section-header h1 {
+     position: relative;
+     padding-bottom: 15px;
+     margin-bottom: 20px;
+     color: #1ecb15;
+ }
+
+ .section-header h1::after {
+     content: '';
+     position: absolute;
+     width: 80px;
+     height: 4px;
+     background-color: var(--primary);
+     bottom: 0;
+     left: 50%;
+     transform: translateX(-50%);
+     border-radius: 2px;
+ }
+
+ .category-title {
+     font-size: 1.8rem;
+     margin-bottom: 25px;
+     padding-bottom: 10px;
+     border-bottom: 2px solid #dee2e6;
+ }
+
+ .vehicle-card {
+     border: none;
+     border-radius: 10px;
+     overflow: hidden;
+     transition: all 0.3s ease;
+     height: 100%;
+ }
+
+ .vehicle-card:hover {
+     transform: translateY(-5px);
+ }
+
+ .vehicle-img {
+     height: 180px;
+     object-fit: cover;
+ }
+
+ .highlight-tag {
+     position: absolute;
+     top: 15px;
+     right: 15px;
+     background-color: var(--accent);
+     color: var(--dark);
+     padding: 4px 12px;
+     border-radius: 20px;
+     font-size: 0.8rem;
+     font-weight: 600;
+ }
+
+ .vehicle-name {
+     font-size: 1.3rem;
+     font-weight: 600;
+ }
+
+ .vehicle-price {
+     font-size: 1.2rem;
+     font-weight: 700;
+     color: var(--primary);
+ }
+
+ .book-btn {
+     background-color: var(--primary);
+     color: var(--white);
+     font-weight: 600;
+     width: 100%;
+ }
+
+ .book-btn:hover {
+     background-color: var(--dark);
+     color: var(--white);
+ }
+
+ .category-badge {
+     background-color: var(--primary);
+     font-size: 0.9rem;
+ }

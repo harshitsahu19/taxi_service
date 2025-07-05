@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhopal Taxi Servicess</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./asssets/css/style.css">
+
+</head>
+
+<body>
+    <!--  Navigation Container -->
+    <nav>
+        <div class="nav-container">
+            <div class="top-bar">
+                <div class="top-contact">
+                    <div class="top-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 62645 96402</span>
+                    </div>
+                    <div class="top-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>Jeevanlodhi53@gmail.com
+                        </span>
+                    </div>
+                    <div class="top-contact-item">
+                        <i class="fas fa-location"></i>
+                        <span>Anand Nagar, Bhopal Madhya Pradesh</span>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="navbar ">
+                <div class="container">
+                    <a href="./index.html">
+                        <div class="logo">
+                            <img src="./asssets/img/navLogo.png" alt="TaxiGo Logo">
+                        </div>
+                    </a>
+
+
+                    <div class="nav-links">
+                        <div class="close-btn">&times;</div>
+                        <a href="#">Home</a>
+                        <a href="#">Services</a>
+                        <a href="#">Fares</a>
+                        <a href="#">About</a>
+                        <a href="#">Contact</a>
+                        <button class="book-now-btn">Book Now</button>
+                    </div>
+
+                    <div class="hamburger">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+
+            <script>
+                // Mobile menu toggle
+                const hamburger = document.querySelector('.hamburger');
+                const navLinks = document.querySelector('.nav-links');
+                const closeBtn = document.querySelector('.close-btn');
+
+                hamburger.addEventListener('click', () => {
+                    navLinks.classList.add('active');
+                });
+
+                closeBtn.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+
+                // Close menu when clicking on nav links
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navLinks.classList.remove('active');
+                    });
+                });
+            </script>
+        </div>
+    </nav>
+    <!--  Navigation Container ENDS-->
+
+
+    <!-- Hero Section STARTS -->
+    <section class="hero-section">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+
+        <div class="container">
+            <div class="hero-content  row align-items-center">
+                <div class="col-lg-6 hero-text">
+                    <h1>Reliable Taxi Service in Bhopal – 24/7 Rides</h1>
+                    <p>Explore Bhopal and the charm of Madhya Pradesh with our trusted taxi service. Enjoy real-time
+                        tracking, instant quotes, and professional drivers—all day, every day.</p>
+                    <a href="#" class=" btn-book">Book Your Taxi in Bhopal Now</a>
+
+
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>24/7 Availability</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>Fixed Pricing</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>Live Tracking</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-image  ">
+                    <img src="./asssets/img/demo.png" alt="Premium Taxi Service in [Your City]" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section ENDS -->
+
+    <section class="image-card-section">
+  <style>
+    .image-card-section {
+      padding: 100px 0;
+      background-color: #ffffff;
+      position: relative;
+    }
+    
+    .image-card-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .image-card-header {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+    
+    .image-card-title {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .image-card-title:after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 5px;
+      background: #f9d713;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .image-cards {
+      display: flex;
+      gap: 25px;
+      justify-content: center;
+    }
+    
+    .image-card {
+      width: 25%;
+      height: 400px;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    .image-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+    
+    .card-bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      z-index: 1;
+    }
+    
+    .image-card:hover .card-bg {
+      transform: scale(1.05);
+    }
+    
+    .card-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+      z-index: 2;
+    }
+    
+    .card-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 30px;
+      z-index: 3;
+      color: white;
+    }
+    
+    .card-icon {
+      width: 60px;
+      height: 60px;
+      background: rgba(30, 203, 21, 0.9);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+    
+    .featured .card-icon {
+      background: rgba(249, 215, 19, 0.9);
+    }
+    
+    .image-card h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: white;
+    }
+    
+    .image-card p {
+      color: rgba(255,255,255,0.9);
+      line-height: 1.6;
+      margin-bottom: 25px;
+      font-size: 15px;
+    }
+    
+    .image-card-btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #1ecb15;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+    
+    .image-card-btn:hover {
+      background: #17a510;
+      transform: translateY(-3px);
+    }
+    
+    .featured .image-card-btn {
+      background: #f9d713;
+      color: #1a1a1a;
+    }
+    
+    .featured .image-card-btn:hover {
+      background: #e6c517;
+    }
+    
+    @media (max-width: 1200px) {
+      .image-cards {
+        flex-wrap: wrap;
+      }
+      .image-card {
+        width: 45%;
+        margin-bottom: 30px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .image-card {
+        width: 100%;
+      height: 350px;
+      margin-bottom: 20px;
+      }
+      .image-card-title {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <div class="image-card-container">
+    <div class="image-card-header">
+      <h2 class="image-card-title">Premium Cab Experiences</h2>
+    </div>
+    
+    <div class="image-cards">
+      <!-- City Rides -->
+      <div class="image-card">
+        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="City Rides" class="card-bg">
+        <div class="card-overlay"></div>
+        <div class="card-content">
+          <div class="card-icon">
+            <i class="bi bi-geo-alt"></i>
+          </div>
+          <h3>City Rides</h3>
+          <p>Navigate urban landscapes with our premium city cab service, available 24/7.</p>
+          <a href="#" class="image-card-btn">Book Now</a>
+        </div>
+      </div>
+      
+      <!-- Outstation (Featured) -->
+      <div class="image-card featured">
+        <img src="https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Outstation Trips" class="card-bg">
+        <div class="card-overlay"></div>
+        <div class="card-content">
+          <div class="card-icon">
+            <i class="bi bi-signpost-2"></i>
+          </div>
+          <h3>Outstation</h3>
+          <p>Comfortable long-distance travel with professional drivers and flexible stops.</p>
+          <a href="#" class="image-card-btn">Book Now</a>
+        </div>
+      </div>
+      
+      <!-- Airport -->
+      <div class="image-card">
+        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Airport Transfers" class="card-bg">
+        <div class="card-overlay"></div>
+        <div class="card-content">
+          <div class="card-icon">
+            <i class="bi bi-airplane"></i>
+          </div>
+          <h3>Airport Elite</h3>
+          <p>Punctual airport transfers with flight tracking and meet-and-greet service.</p>
+          <a href="#" class="image-card-btn">Book Now</a>
+        </div>
+      </div>
+      
+      <!-- Corporate -->
+      <div class="image-card">
+        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Corporate Travel" class="card-bg">
+        <div class="card-overlay"></div>
+        <div class="card-content">
+          <div class="card-icon">
+            <i class="bi bi-briefcase"></i>
+          </div>
+          <h3>Business Class</h3>
+          <p>Executive travel solutions with premium vehicles and detailed reporting.</p>
+          <a href="#" class="image-card-btn">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+</body>
+
+</html>

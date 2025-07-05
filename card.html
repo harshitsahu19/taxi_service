@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+</head>
+
+<body>
+
+    <section style="background-color: #1ecb15;">
+        <style>
+            .car-card {
+                border: none;
+                border-radius: 12px;
+                padding: 20px;
+                text-align: center;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                background: #fff;
+                transition: transform 0.3s;
+            }
+
+            .car-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .car-img {
+                width: 200px;
+                height: auto;
+                margin: 15px 0;
+                transform: scale(1.4);
+            }
+
+            .info {
+                font-size: 14px;
+                color: #444;
+            }
+
+            .card-title {
+                color: #1ecb15;
+                font-weight: 600;
+                margin-bottom: 5px;
+            }
+
+            .car-type {
+                color: #000;
+                font-weight: bold;
+                font-size: 16px;
+            }
+        </style>
+
+        <div class="container py-5">
+            <h1 class="text-center display-5 text-white fw-bold mb-5">Choose Your Ride</h1>
+
+            <div class="row g-4">
+                <div class="col-md-3 col-sm-6">
+                    <div class="car-card">
+                        <h5 class="card-title">Round Trip - Rs.13/km</h5>
+                        <div class="car-type">SUV</div>
+                        <img src="./asssets/img/cars/01creta.png" alt="Creta SUV" class="car-img">
+                        <div class="info">Capacity: 5 Persons</div>
+                        <div class="info">AC</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="car-card">
+                        <h5 class="card-title">Round Trip - Rs.12/km</h5>
+                        <div class="car-type">MPV</div>
+                        <img src="./asssets/img/cars/02ertiga.png" alt="Ertiga MPV" class="car-img">
+                        <div class="info">Capacity: 6 Persons</div>
+                        <div class="info">AC</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="car-card">
+                        <h5 class="card-title">Round Trip - Rs.10/km</h5>
+                        <div class="car-type">HATCHBACK</div>
+                        <img src="./asssets/img/cars/03indica.png" alt="Indica Hatchback" class="car-img">
+                        <div class="info">Capacity: 4 Persons</div>
+                        <div class="info">AC</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="car-card">
+                        <h5 class="card-title">Round Trip - Rs.14/km</h5>
+                        <div class="car-type">SEDAN</div>
+                        <img src="./asssets/img/cars/04accent.png" alt="Hyundai Accent" class="car-img">
+                        <div class="info">Capacity: 4 Persons</div>
+                        <div class="info">AC</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mt-2">
+                <div class="col-md-3 col-sm-6">
+                    <div class="car-card">
+                        <h5 class="card-title">Round Trip - Rs.9/km</h5>
+                        <div class="car-type">HATCHBACK</div>
+                        <img src="./asssets/img/cars/05alto.png" alt="Alto Hatchback" class="car-img">
+                        <div class="info">Capacity: 4 Persons</div>
+                        <div class="info">Non-AC</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="car-card">
+                        <h5 class="card-title">Round Trip - Rs.11/km</h5>
+                        <div class="car-type">HATCHBACK</div>
+                        <img src="./asssets/img/cars/06swift.png" alt="Swift Hatchback" class="car-img">
+                        <div class="info">Capacity: 4 Persons</div>
+                        <div class="info">AC</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="car-card">
+                        <h5 class="card-title">Round Trip - Rs.18/km</h5>
+                        <div class="car-type">TRAVELLER</div>
+                        <img src="./asssets/img/cars/07traveller.png" alt="Tempo Traveller" class="car-img">
+                        <div class="info">Capacity: 12 Persons</div>
+                        <div class="info">AC</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="car-card">
+                        <h5 class="card-title">Round Trip - Rs.15/km</h5>
+                        <div class="car-type">INNOVA</div>
+                        <img src="./asssets/img/cars/08innova.png" alt="Innova Crysta" class="car-img">
+                        <div class="info">Capacity: 7 Persons</div>
+                        <div class="info">AC</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="position-relative text-white">
+        <!-- Hero Section -->
+        <div class="hero-bg text-center py-5">
+            <div class="container">
+                <h2 style="color: #1ecb15;">Your Ride</h2>
+                <p class="fw-bold text-white">Just Made More <span style="color: #fbbf24;">Comfortable</span></p>
+                <h1 class="display-4 fw-bold text-white">Exciting Outstation Plans!</h1>
+                <p class="text-white">Make your ride <a href="#"
+                        class="text-white text-decoration-underline">easier!</a></p>
+                <a href="#" class="btn btn-warning fw-bold rounded-pill px-4 py-2">EXPLORE TRAIFF</a>
+            </div>
+        </div>
+        <style>
+            .hero-bg {
+                background: linear-gradient(rgba(30, 30, 30, 0.7), rgba(30, 30, 30, 0.7)),
+                    url('https://www.onewaycarrental.in/images/banner/bg.jpg') center center/cover no-repeat;
+            }
+        </style>
+    </section>
+    
+
+   <section class="testimonial-carousel py-5" style="background-color: #f8f9fa;">
+    <style>
+        .testimonial-carousel {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .testimonial-carousel .carousel-indicators {
+            bottom: -50px;
+        }
+        .testimonial-carousel .carousel-indicators [data-bs-target] {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: white;
+            border: 2px solid #1ecb15;
+            margin: 0 5px;
+            opacity: 1;
+            transition: all 0.3s ease;
+        }
+        .testimonial-carousel .carousel-indicators .active {
+            background-color: #1ecb15;
+            border-color: #1ecb15;
+            transform: scale(1.2);
+        }
+        .testimonial-carousel .carousel-control-prev-icon,
+        .testimonial-carousel .carousel-control-next-icon {
+            background-color: #1ecb15;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            background-size: 60%;
+        }
+        .testimonial-carousel .testimonial-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 0 15px;
+            text-align: center;
+            height: 100%;
+            border-top: 4px solid #1ecb15;
+            margin-bottom: 30px; /* Space for indicators */
+        }
+        .testimonial-carousel .testimonial-card .rating {
+            color: #ffc107;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        .testimonial-carousel .testimonial-card .quote {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        .testimonial-carousel .testimonial-card .user-info img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #1ecb15;
+            margin-bottom: 10px;
+        }
+        .testimonial-carousel .testimonial-card .user-info h5 {
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .testimonial-carousel .testimonial-card .user-info p {
+            color: #1ecb15;
+            font-size: 14px;
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            .testimonial-carousel .testimonial-card {
+                padding: 20px;
+            }
+            .testimonial-carousel .carousel-indicators {
+                bottom: -40px;
+            }
+        }
+    </style>
+
+    <div class="container">
+        <h2 class="text-center mb-5" style="color: #1ecb15;">What Our Customers Say</h2>
+        
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Testimonial 1 -->
+                <div class="carousel-item active">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="testimonial-card">
+                                <div class="rating">
+                                    ★★★★★
+                                </div>
+                                <p class="quote">
+                                    "The best taxi service I've ever used! The app is so easy to use and the drivers are always punctual and polite. I use it every day for my commute."
+                                </p>
+                                <div class="user-info">
+                                    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
+                                    <h5>Sarah Johnson</h5>
+                                    <p>Regular Customer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="testimonial-card">
+                                <div class="rating">
+                                    ★★★★☆
+                                </div>
+                                <p class="quote">
+                                    "I was impressed with how clean and comfortable the car was. The driver knew the best routes to avoid traffic. Will definitely book again for my airport transfers."
+                                </p>
+                                <div class="user-info">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                                    <h5>Michael Chen</h5>
+                                    <p>Business Traveler</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="testimonial-card">
+                                <div class="rating">
+                                    ★★★★★
+                                </div>
+                                <p class="quote">
+                                    "As a senior citizen, I appreciate the helpful drivers who assist me with my groceries. The service is reliable and the fares are reasonable compared to other companies."
+                                </p>
+                                <div class="user-info">
+                                    <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Margaret Williams">
+                                    <h5>Margaret Williams</h5>
+                                    <p>Senior Citizen</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"></button>
+            </div>
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+<!-- Bootstrap 5 CSS & JS (if not already added) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+
+
+
+</body>
+
+</html>
