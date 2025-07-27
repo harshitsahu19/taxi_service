@@ -132,85 +132,137 @@
             <div class="tx-bg-circle tx-bg-circle-2"></div>
         </div>
 
-        <div class="tx-container">
-            <div class="tx-section-header">
-                <h2>Premium Taxi Services Bhopal</h2>
-                <p>Choose from our exclusive range of transportation solutions tailored to your specific needs</p>
-            </div>
+        <section>
+            <style>
+                .tx-card-row {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    gap: 20px;
+                }
 
-            <div class="container">
-                <div class="row">
+                .tx-card-row>div {
+                    flex: 1 1 calc(20% - 20px);
+                    min-width: 220px;
+                }
+
+                @media (max-width: 992px) {
+                    .tx-card-row>div {
+                        flex: 1 1 calc(50% - 20px);
+                    }
+                }
+
+                @media (max-width: 576px) {
+                    .tx-card-row>div {
+                        flex: 1 1 100%;
+                    }
+                }
+
+                .tx-container {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    padding: 20px;
+                }
+            </style>
+
+            <div class="tx-container">
+                <div class="tx-section-header">
+                    <h2>Premium Taxi Services Bhopal</h2>
+                    <p>
+                        Choose from our exclusive range of transportation solutions tailored to
+                        your specific needs
+                    </p>
+                </div>
+
+                <div class="tx-card-row">
                     <!-- Outstation Trips -->
-                    <div class="col-lg-3 col-md-6 col-12 mb-4">
-                        <div class="tx-card__bx tx-card__outstation">
-                            <div class="tx-card__data">
-                                <div class="tx-card__icon">
-                                    <div class="tx-card__icon-bx">
-                                        <i class="fas fa-route"></i>
-                                    </div>
-                                </div>
-                                <div class="tx-card__content">
-                                    <h3>Outstation Trips</h3>
-                                    <p>Comfortable long-distance travel with experienced drivers for all your
-                                        outstation needs.</p>
-                                    <a href="#">Book Now</a>
-                                </div>
+                    <div class="tx-card__bx tx-card__outstation">
+                        <div class="tx-card__data">
+                            <div class="tx-card__icon">
+                                <div class="tx-card__icon-bx"><i class="fas fa-route"></i></div>
+                            </div>
+                            <div class="tx-card__content">
+                                <h3>Outstation Trips</h3>
+                                <p>
+                                    Comfortable long-distance travel with experienced drivers for all
+                                    your outstation needs.
+                                </p>
+                                <a href="#">Book Now</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Corporate Services -->
-                    <div class="col-lg-3 col-md-6 col-12 mb-4">
-                        <div class="tx-card__bx tx-card__corporate">
-                            <div class="tx-card__data">
-                                <div class="tx-card__icon">
-                                    <div class="tx-card__icon-bx"><i class="fas fa-briefcase"></i></div>
-                                </div>
-                                <div class="tx-card__content">
-                                    <h3>Corporate</h3>
-                                    <p>Reliable transportation solutions for your business needs with professional
-                                        chauffeurs.</p>
-                                    <a href="#">Book Now</a>
-                                </div>
+                    <div class="tx-card__bx tx-card__corporate">
+                        <div class="tx-card__data">
+                            <div class="tx-card__icon">
+                                <div class="tx-card__icon-bx"><i class="fas fa-briefcase"></i></div>
+                            </div>
+                            <div class="tx-card__content">
+                                <h3>Corporate</h3>
+                                <p>
+                                    Reliable transportation solutions for your business needs with
+                                    professional chauffeurs.
+                                </p>
+                                <a href="#">Book Now</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Local Trips -->
-                    <div class="col-lg-3 col-md-6 col-12 mb-4">
-                        <div class="tx-card__bx tx-card__local">
-                            <div class="tx-card__data">
-                                <div class="tx-card__icon">
-                                    <div class="tx-card__icon-bx"><i class="fas fa-city"></i></div>
-                                </div>
-                                <div class="tx-card__content">
-                                    <h3>Local Trips</h3>
-                                    <p>Quick and convenient point-to-point travel within the city at competitive
-                                        rates.</p>
-                                    <a href="#">Book Now</a>
-                                </div>
+                    <div class="tx-card__bx tx-card__local">
+                        <div class="tx-card__data">
+                            <div class="tx-card__icon">
+                                <div class="tx-card__icon-bx"><i class="fas fa-city"></i></div>
+                            </div>
+                            <div class="tx-card__content">
+                                <h3>Local Trips</h3>
+                                <p>
+                                    Quick and convenient point-to-point travel within the city at
+                                    competitive rates.
+                                </p>
+                                <a href="#">Book Now</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Airport Trips -->
-                    <div class="col-lg-3 col-md-6 col-12 mb-4">
-                        <div class="tx-card__bx tx-card__airport">
-                            <div class="tx-card__data">
-                                <div class="tx-card__icon">
-                                    <div class="tx-card__icon-bx"><i class="fas fa-plane"></i></div>
-                                </div>
-                                <div class="tx-card__content">
-                                    <h3>Airport Trips</h3>
-                                    <p>On-time airport transfers with flight tracking and meet & greet services.</p>
-                                    <a href="#">Book Now</a>
-                                </div>
+                    <div class="tx-card__bx tx-card__airport">
+                        <div class="tx-card__data">
+                            <div class="tx-card__icon">
+                                <div class="tx-card__icon-bx"><i class="fas fa-plane"></i></div>
+                            </div>
+                            <div class="tx-card__content">
+                                <h3>Airport Trips</h3>
+                                <p>
+                                    On-time airport transfers with flight tracking and meet & greet
+                                    services.
+                                </p>
+                                <a href="#">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Railway Station Pickup -->
+                    <div class="tx-card__bx tx-card__railway">
+                        <div class="tx-card__data">
+                            <div class="tx-card__icon">
+                                <div class="tx-card__icon-bx"><i class="fas fa-train"></i></div>
+                            </div>
+                            <div class="tx-card__content">
+                                <h3>Railway Pickup</h3>
+                                <p>
+                                    Swift and hassle-free pickup from Bhopal railway stations with
+                                    real-time tracking.
+                                </p>
+                                <a href="#">Book Now</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+
 
 
     </section>
@@ -299,92 +351,173 @@
         </style>
 
         <div class="container py-5">
-            <h1 class="text-center display-5 text-white fw-bold mb-5">Choose Your Ride</h1>
+  <h1 class="text-center display-5 text-white fw-bold mb-5">Choose Your Ride</h1>
 
-            <div class="row g-4">
-                <div class="col-md-3 col-sm-6">
-                    <div class="car-card">
-                        <h5 class="card-title"> Trip - Rs.13/km</h5>
-                        <div class="car-type">SUV</div>
-                        <img src="./asssets/img/cars/01creta.png" alt="Creta SUV" class="car-img">
-                        <div class="info">Capacity: 5 Persons</div>
-                        <div class="info">AC</div>
-                    </div>
-                </div>
+  <div class="row g-4">
+    <!-- Dzire -->
+    <div class="col-md-3 col-sm-6">
+      <div class="car-card">
+        <h5 class="card-title">Trip - ₹10/km</h5>
+        <div class="car-type">SEDAN</div>
+        <div class="car-name">Dzire</div>
+        <img src="./asssets/img/cars/06swift.png" alt="Dzire" class="car-img">
+        <div class="info">Capacity: 4 Persons</div>
+        <div class="info">AC</div>
+      </div>
+    </div>
 
-                <div class="col-md-3 col-sm-6">
-                    <div class="car-card">
-                        <h5 class="card-title"> Trip - Rs.12/km</h5>
-                        <div class="car-type">MPV</div>
-                        <img src="./asssets/img/cars/02ertiga.png" alt="Ertiga MPV" class="car-img">
-                        <div class="info">Capacity: 6 Persons</div>
-                        <div class="info">AC</div>
-                    </div>
-                </div>
+    <!-- Alto -->
+    <div class="col-md-3 col-sm-6">
+      <div class="car-card">
+        <h5 class="card-title">Trip - ₹9/km</h5>
+        <div class="car-type">HATCHBACK</div>
+        <div class="car-name">Alto</div>
+        <img src="./asssets/img/cars/05alto.png" alt="Alto" class="car-img">
+        <div class="info">Capacity: 4 Persons</div>
+        <div class="info">Non-AC</div>
+      </div>
+    </div>
 
-                <div class="col-md-3 col-sm-6">
-                    <div class="car-card">
-                        <h5 class="card-title"> Trip - Rs.10/km</h5>
-                        <div class="car-type">HATCHBACK</div>
-                        <img src="./asssets/img/cars/03indica.png" alt="Indica Hatchback" class="car-img">
-                        <div class="info">Capacity: 4 Persons</div>
-                        <div class="info">AC</div>
-                    </div>
-                </div>
+    <!-- Aura -->
+    <div class="col-md-3 col-sm-6">
+      <div class="car-card">
+        <h5 class="card-title">Trip - ₹10/km</h5>
+        <div class="car-type">SEDAN</div>
+        <div class="car-name">Aura</div>
+        <img src="./asssets/img/cars/04accent.png" alt="Aura" class="car-img">
+        <div class="info">Capacity: 4 Persons</div>
+        <div class="info">AC</div>
+      </div>
+    </div>
 
-                <div class="col-md-3 col-sm-6">
-                    <div class="car-card">
-                        <h5 class="card-title"> Trip - Rs.14/km</h5>
-                        <div class="car-type">SEDAN</div>
-                        <img src="./asssets/img/cars/04accent.png" alt="Hyundai Accent" class="car-img">
-                        <div class="info">Capacity: 4 Persons</div>
-                        <div class="info">AC</div>
-                    </div>
-                </div>
-            </div>
+    <!-- Toyota Innova -->
+    <div class="col-md-3 col-sm-6">
+      <div class="car-card">
+        <h5 class="card-title">Trip - ₹15/km</h5>
+        <div class="car-type">SUV</div>
+        <div class="car-name">Toyota Innova</div>
+        <img src="./asssets/img/cars/08innova.png" alt="Toyota Innova" class="car-img">
+        <div class="info">Capacity: 7 Persons</div>
+        <div class="info">AC</div>
+      </div>
+    </div>
+  </div>
 
-            <div class="row g-4 mt-2">
-                <div class="col-md-3 col-sm-6">
-                    <div class="car-card">
-                        <h5 class="card-title"> Trip - Rs.9/km</h5>
-                        <div class="car-type">HATCHBACK</div>
-                        <img src="./asssets/img/cars/05alto.png" alt="Alto Hatchback" class="car-img">
-                        <div class="info">Capacity: 4 Persons</div>
-                        <div class="info">Non-AC</div>
-                    </div>
-                </div>
+  <div class="row g-4 mt-2">
+    <!-- Toyota Innova Crysta -->
+    <div class="col-md-3 col-sm-6">
+      <div class="car-card">
+        <h5 class="card-title">Trip - ₹16/km</h5>
+        <div class="car-type">SUV</div>
+        <div class="car-name">Toyota Innova Crysta</div>
+        <img src="./asssets/img/cars/08innova.png" alt="Innova Crysta" class="car-img">
+        <div class="info">Capacity: 7 Persons</div>
+        <div class="info">AC</div>
+      </div>
+    </div>
 
-                <div class="col-md-3 col-sm-6">
-                    <div class="car-card">
-                        <h5 class="card-title"> Trip - Rs.11/km</h5>
-                        <div class="car-type">HATCHBACK</div>
-                        <img src="./asssets/img/cars/06swift.png" alt="Swift Hatchback" class="car-img">
-                        <div class="info">Capacity: 4 Persons</div>
-                        <div class="info">AC</div>
-                    </div>
-                </div>
+    <!-- 13/14 Seater Traveller -->
+    <div class="col-md-3 col-sm-6">
+      <div class="car-card">
+        <h5 class="card-title">Trip - ₹24/km</h5>
+        <div class="car-type">TRAVELLER</div>
+        <div class="car-name">13/14 Seater Traveller</div>
+        <img src="./asssets/img/cars/07traveller.png" alt="Traveller 14" class="car-img">
+        <div class="info">Capacity: 14 Persons</div>
+        <div class="info">AC</div>
+      </div>
+    </div>
 
-                <div class="col-md-3 col-sm-6">
-                    <div class="car-card">
-                        <h5 class="card-title"> Trip - Rs.18/km</h5>
-                        <div class="car-type">TRAVELLER</div>
-                        <img src="./asssets/img/cars/07traveller.png" alt="Tempo Traveller" class="car-img">
-                        <div class="info">Capacity: 12 Persons</div>
-                        <div class="info">AC</div>
-                    </div>
-                </div>
+    <!-- 17 Seater Traveller -->
+    <div class="col-md-3 col-sm-6">
+      <div class="car-card">
+        <h5 class="card-title">Trip - ₹25/km</h5>
+        <div class="car-type">TRAVELLER</div>
+        <div class="car-name">17 Seater Traveller</div>
+        <img src="./asssets/img/cars/07traveller.png" alt="Traveller 17" class="car-img">
+        <div class="info">Capacity: 17 Persons</div>
+        <div class="info">AC</div>
+      </div>
+    </div>
 
-                <div class="col-md-3 col-sm-6">
-                    <div class="car-card">
-                        <h5 class="card-title"> Trip - Rs.15/km</h5>
-                        <div class="car-type">INNOVA</div>
-                        <img src="./asssets/img/cars/08innova.png" alt="Innova Crysta" class="car-img">
-                        <div class="info">Capacity: 7 Persons</div>
-                        <div class="info">AC</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- 20 Seater Traveller -->
+    <div class="col-md-3 col-sm-6">
+      <div class="car-card">
+        <h5 class="card-title">Trip - ₹30/km</h5>
+        <div class="car-type">TRAVELLER</div>
+        <div class="car-name">20 Seater Traveller</div>
+        <img src="./asssets/img/cars/07traveller.png" alt="Traveller 20" class="car-img">
+        <div class="info">Capacity: 20 Persons</div>
+        <div class="info">AC</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-4 mt-2">
+    <!-- Swift -->
+    <div class="col-md-3 col-sm-6">
+      <div class="car-card">
+        <h5 class="card-title">Trip - ₹11/km</h5>
+        <div class="car-type">HATCHBACK</div>
+        <div class="car-name">Swift</div>
+        <img src="./asssets/img/cars/06swift.png" alt="Swift" class="car-img">
+        <div class="info">Capacity: 4 Persons</div>
+        <div class="info">AC</div>
+      </div>
+    </div>
+
+    <!-- Tata Indigo -->
+    <div class="col-md-3 col-sm-6">
+      <div class="car-card">
+        <h5 class="card-title">Trip - ₹11/km</h5>
+        <div class="car-type">SEDAN</div>
+        <div class="car-name">Tata Indica</div>
+        <img src="./asssets/img/cars/03indica.png" alt="Indigo" class="car-img">
+        <div class="info">Capacity: 4 Persons</div>
+        <div class="info">AC</div>
+      </div>
+    </div>
+
+    <!-- Maruti Ertiga -->
+    <div class="col-md-3 col-sm-6">
+      <div class="car-card">
+        <h5 class="card-title">Trip - ₹14/km</h5>
+        <div class="car-type">MPV</div>
+        <div class="car-name">Maruti Ertiga</div>
+        <img src="./asssets/img/cars/02ertiga.png" alt="Ertiga" class="car-img">
+        <div class="info">Capacity: 6 Persons</div>
+        <div class="info">AC</div>
+      </div>
+    </div>
+
+    <!-- Hyundai Creta -->
+    <div class="col-md-3 col-sm-6">
+      <div class="car-card">
+        <h5 class="card-title">Trip - ₹14/km</h5>
+        <div class="car-type">SUV</div>
+        <div class="car-name">Hyundai Creta</div>
+        <img src="./asssets/img/cars/01creta.png" alt="Creta" class="car-img">
+        <div class="info">Capacity: 5 Persons</div>
+        <div class="info">AC</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-4 mt-2">
+    <!-- Hyundai Xcent -->
+    <div class="col-md-3 col-sm-6">
+      <div class="car-card">
+        <h5 class="card-title">Trip - ₹11/km</h5>
+        <div class="car-type">SEDAN</div>
+        <div class="car-name">Hyundai Xcent</div>
+        <img src="./asssets/img/cars/04accent.png" alt="Xcent" class="car-img">
+        <div class="info">Capacity: 4 Persons</div>
+        <div class="info">AC</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
     </section>
 
@@ -697,8 +830,7 @@
                         </div>
                         <div class="info-content">
                             <h5>Email</h5>
-                            <p>Jeevanlodhi53@gmail.com
-                            </p>
+                            <p>bhopaltaxiservicess@gmail.com</p>
                         </div>
                     </div>
                     <div class="info-box">
@@ -707,7 +839,7 @@
                         </div>
                         <div class="info-content">
                             <h5>Phone</h5>
-                            <p>+91 62645 96402</p>
+                            <p>+918823892940</p>
                         </div>
                     </div>
                 </div>
