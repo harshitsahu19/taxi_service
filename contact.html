@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhopal Taxi Servicess</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./asssets/css/style.css">
+
+</head>
+
+<body>
+
+
+
+    <!--  Navigation Container -->
+    <nav>
+        <div class="nav-container">
+            <div class="top-bar">
+                <div class="top-contact">
+                    <div class="top-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 8823892940</span>
+                    </div>
+                    <div class="top-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>Jeevanlodhi53@gmail.com
+                        </span>
+                    </div>
+                    <div class="top-contact-item">
+                        <i class="fas fa-location"></i>
+                        <span>Anand Nagar, Bhopal Madhya Pradesh</span>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="navbar ">
+                <div class="container">
+                    <a href="./index.html">
+                        <div class="logo">
+                            <img src="./asssets/img/navLogo.png" alt="TaxiGo Logo">
+                        </div>
+                    </a>
+
+
+                    <div class="nav-links">
+                        <div class="close-btn">&times;</div>
+                        <a href="#">Home</a>
+                        <a href="./services.html">Services</a>
+                        <a href="#">Pricing</a>
+                        <a href="#">About</a>
+                        <a href="#">Contact</a>
+                        <button class="book-now-btn">Book Now</button>
+                    </div>
+
+                    <div class="hamburger">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+
+            <script>
+                // Mobile menu toggle
+                const hamburger = document.querySelector('.hamburger');
+                const navLinks = document.querySelector('.nav-links');
+                const closeBtn = document.querySelector('.close-btn');
+
+                hamburger.addEventListener('click', () => {
+                    navLinks.classList.add('active');
+                });
+
+                closeBtn.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+
+                // Close menu when clicking on nav links
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navLinks.classList.remove('active');
+                    });
+                });
+            </script>
+        </div>
+    </nav>
+    <!--  Navigation Container ENDS-->
+
+    <!-- Hero Section STARTS -->
+    <section class="services-hero"
+        style="background-image: url('https://images.unsplash.com/photo-1599721489452-b71f4375428b?q=80&w=1239&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+        <style>
+            .services-hero {
+                position: relative;
+                height: auto;
+                min-height: 90vh;
+                background-size: cover;
+                background-position: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                text-align: center;
+                padding: 30px 20px;
+                box-sizing: border-box;
+            }
+
+            .services-hero::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.6);
+            }
+
+            .services-hero-content {
+                position: relative;
+                z-index: 1;
+                width: 100%;
+                max-width: 900px;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+
+            .services-hero h1 {
+                font-size: clamp(1.8rem, 5vw, 2.8rem);
+                font-weight: 700;
+                margin-bottom: 15px;
+                line-height: 1.3;
+            }
+
+            .services-hero p {
+                font-size: clamp(1rem, 3vw, 1.2rem);
+                margin-bottom: 25px;
+                line-height: 1.5;
+            }
+
+            .service-cards {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                margin: 25px auto;
+                flex-wrap: wrap;
+                max-width: 500px;
+            }
+
+            .service-card {
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(8px);
+                border-radius: 8px;
+                padding: 15px;
+                width: 160px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                box-sizing: border-box;
+            }
+
+            .service-card h3 {
+                font-size: 1rem;
+                margin-bottom: 8px;
+                color: #1ecb15;
+            }
+
+            .service-card p {
+                font-size: 0.8rem;
+                margin-bottom: 0;
+                opacity: 0.9;
+                line-height: 1.4;
+            }
+
+            .hero-buttons {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                margin-top: 20px;
+                flex-wrap: wrap;
+            }
+
+            .btn-book,
+            .btn-rent {
+                padding: 12px 20px;
+                font-weight: 600;
+                border-radius: 5px;
+                transition: all 0.3s ease;
+                font-size: 0.9rem;
+                width: 160px;
+                box-sizing: border-box;
+                text-align: center;
+            }
+
+            .btn-book {
+                background-color: #1ecb15 !important;
+                color: white !important;
+                border: none;
+            }
+
+            .btn-book:hover {
+                background-color: #18a811;
+            }
+
+            .btn-rent {
+                background-color: transparent;
+                color: white !important;
+                border: 2px solid white !important;
+            }
+
+            .btn-rent:hover {
+                background-color: white;
+                color: #1ecb15;
+            }
+
+            @media (max-width: 768px) {
+                .service-cards {
+                    flex-direction: row;
+                    max-width: 350px;
+                    gap: 10px;
+                }
+
+                .service-card {
+                    width: calc(50% - 5px);
+                    padding: 12px;
+                }
+
+                .hero-buttons {
+                    gap: 10px;
+                    max-width: 350px;
+                    margin: 20px auto 0;
+                }
+
+                .btn-book,
+                .btn-rent {
+                    width: calc(50% - 5px);
+                    padding: 12px 10px;
+                }
+            }
+        </style>
+        <div class="services-hero-content">
+            <h1>Get in Touch With Us</h1>
+            <p>Have questions or need assistance? We’re here to help you 24/7.</p>
+
+            <div class="service-cards">
+                <div class="service-card">
+                    <h3>Call or WhatsApp</h3>
+                    <p>Speak to our support team directly at our whatsapp</p>
+                </div>
+                <div class="service-card">
+                    <h3>Email Support</h3>
+                    <p>Send us your queries at  Email</p>
+                </div>
+            </div>
+
+            <div class="hero-buttons">
+                <a href="#contact-form" class="btn btn-book">Contact Us</a>
+                <a href="#location" class="btn btn-rent">Find Us</a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Hero Section ENDS -->
+    <!-- ONLINE BOOKING SECTION  -->
+    <section>
+        <div class="booking-container">
+            <section class="booking">
+                <div class="left-column">
+                    <div class="left-overlay">
+                        <img src="./asssets/img/demo.png" alt="Taxi" class="taxi-car" />
+                    </div>
+                </div>
+                <div class="right-column">
+                    <div class="right-overlay">
+                        <p class="online-booking">/// ONLINE BOOKING</p>
+                        <h1>Book <span>your ride now!</span></h1>
+                        <div class="form-grid">
+                            <div class="input-box"><i class="bi bi-person"></i><input type="text"
+                                    placeholder="Your Name">
+                            </div>
+                            <div class="input-box"><i class="bi bi-telephone"></i><input type="text"
+                                    placeholder="Phone">
+                            </div>
+                            <div class="input-box"><i class="bi bi-envelope"></i><input type="email"
+                                    placeholder="Email">
+                            </div>
+
+                            <div class="input-box"><i class="bi bi-people"></i><input type="text"
+                                    placeholder="Passenger">
+                            </div>
+                            <div class="input-box"><i class="bi bi-geo-alt"></i><input type="text"
+                                    placeholder="Start Destination"></div>
+                            <div class="input-box"><i class="bi bi-geo-alt-fill"></i><input type="text"
+                                    placeholder="End Destination"></div>
+
+                        </div>
+                        <button class="book-btn">Book Your Taxi</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    <!-- ONLINE BOOKING SECTION ENDS -->
+
+
+    <!-- Sticky WhatsApp and Call Buttons -->
+    <section>
+        <div class="floating-buttons">
+            <a href="https://wa.me/918823892940?text=Hi%2C%20I%27m%20interested%20in%20a%20tour%20package."
+                target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+                <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" />
+            </a>
+
+            <a href="tel:+918823892940" class="call-float" aria-label="Call Now">
+                <img src="https://img.icons8.com/color/48/000000/phone.png" alt="Call" />
+            </a>
+        </div>
+
+
+        <style>
+            .floating-buttons {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                z-index: 1000;
+            }
+
+            .floating-buttons a {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: #25D366;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                transition: transform 0.3s;
+            }
+
+            .call-float {
+                background-color: #1ecb15;
+            }
+
+            .floating-buttons a:hover {
+                transform: scale(1.1);
+            }
+
+            .floating-buttons img {
+                width: 32px;
+                height: 32px;
+            }
+
+            @media (max-width: 600px) {
+                .floating-buttons a {
+                    width: 50px;
+                    height: 50px;
+                }
+
+                .floating-buttons img {
+                    width: 26px;
+                    height: 26px;
+                }
+            }
+        </style>
+    </section>
+
+
+<section class="contact-section py-5">
+        <style>
+            .contact-section {
+                background-color: #f9f9f9;
+            }
+
+            .contact-heading {
+                color: #1ecb15;
+                font-weight: bold;
+                margin-bottom: 40px;
+            }
+
+            .info-box {
+                background-color: #ffffff;
+                border-radius: 12px;
+                padding: 25px 20px;
+                margin-bottom: 20px;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+                transition: all 0.3s ease;
+                display: flex;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .info-box:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 24px rgba(30, 203, 21, 0.2);
+            }
+
+            .info-icon {
+                font-size: 28px;
+                color: #1ecb15;
+                flex-shrink: 0;
+            }
+
+            .info-content h5 {
+                color: #1ecb15;
+                font-weight: 600;
+                margin: 0 0 5px;
+                font-size: 18px;
+            }
+
+            .info-content p {
+                margin: 0;
+                color: #333;
+                font-size: 15px;
+            }
+
+            .map-container {
+                height: 100%;
+                min-height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .map-container iframe {
+                flex: 1;
+                width: 100%;
+                border: none;
+                border-radius: 12px;
+            }
+
+            @media (max-width: 768px) {
+                .map-container {
+                    height: 300px;
+                    margin-bottom: 30px;
+                }
+            }
+        </style>
+
+        <div class="container">
+            <h2 class="text-center contact-heading">Contact Us</h2>
+            <div class="row align-items-stretch">
+                <div class="col-md-6 d-flex">
+                    <div class="map-container w-100">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3665.3176756141133!2d77.461263!3d23.267903999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa496370fe5127c87%3A0xac729fb5594b026a!2sBhopal%20Taxi%20Servicee!5e0!3m2!1sen!2sin!4v1753611616659!5m2!1sen!2sin"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="info-box">
+                        <div class="info-icon">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+                        <div class="info-content">
+                            <h5>Address</h5>
+                            <p>
+                                Anand Nagar, Bhopal Madhya Pradesh</p>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <div class="info-icon">
+                            <i class="bi bi-envelope-fill"></i>
+                        </div>
+                        <div class="info-content">
+                            <h5>Email</h5>
+                            <p>bhopaltaxiservicess@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <div class="info-icon">
+                            <i class="bi bi-telephone-fill"></i>
+                        </div>
+                        <div class="info-content">
+                            <h5>Phone</h5>
+                            <p>+918823892940</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer-section position-relative overflow-hidden mt-5">
+        <div class="container py-5 text-white position-relative z-1">
+            <div class="row g-4">
+                <!-- Column 1: Logo & Social -->
+                <div class="col-md-2 text-center text-md-start">
+                    <img src="./asssets/img/navLogo.png" alt="Logo" class="img-fluid mb-3"
+                        style="max-width: 150px; background-color: white; padding: 10px; border-radius: 10px;">
+                    <div class="d-flex gap-2 justify-content-center justify-content-md-start">
+                        <div class="social-icon bg-success">
+                            <i class="fab fa-facebook-f text-white"></i>
+                        </div>
+                        <div class="social-icon bg-success">
+                            <i class="fab fa-instagram text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="col-md-2">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><i class="fa-solid fa-car-side me-2 theme-color"></i>About Us</li>
+                        <li><i class="fa-solid fa-car-side me-2 theme-color"></i>Explore</li>
+                        <li><i class="fa-solid fa-car-side me-2 theme-color"></i>Testimonials</li>
+                        <li><i class="fa-solid fa-car-side me-2 theme-color"></i>FAQ</li>
+                        <li><i class="fa-solid fa-car-side me-2 theme-color"></i>Contact Us</li>
+                        <li><i class="fa-solid fa-car-side me-2 theme-color"></i>Policy</li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact Info -->
+                <div class="col-md-3">
+                    <h6 class="fw-bold mb-3">Contact</h6>
+                    <p><i class="fa-solid fa-phone theme-color me-2"></i>+91 62645 96402</p>
+                    <p><i class="fa-solid fa-envelope theme-color me-2"></i>Jeevanlodhi53@gmail.com</p>
+                    <p><i class="fa-solid fa-location-arrow theme-color me-2"></i>Anand Nagar, Bhopal, MP</p>
+                </div>
+
+                <!-- Column 4: Popular Routes Left -->
+                <div class="col-md-2">
+                    <h6 class="fw-bold mb-3">Popular Routes</h6>
+                    <ul class="list-unstyled">
+                        <li><i class="fa-solid fa-route me-2 theme-color"></i>Bhopal to Indore</li>
+                        <li><i class="fa-solid fa-route me-2 theme-color"></i>Bhopal to Jabalpur</li>
+                        <li><i class="fa-solid fa-route me-2 theme-color"></i>Bhopal to Gwalior</li>
+                        <li><i class="fa-solid fa-route me-2 theme-color"></i>Bhopal to Ujjain</li>
+                        <li><i class="fa-solid fa-route me-2 theme-color"></i>Bhopal to Sagar</li>
+                    </ul>
+                </div>
+
+                <!-- Column 5: Popular Routes Right -->
+                <div class="col-md-3">
+                    <h6 class="fw-bold mb-3 invisible">Popular Routes</h6>
+                    <ul class="list-unstyled mt-4">
+                        <li><i class="fa-solid fa-route me-2 theme-color"></i>Bhopal to Rewa</li>
+                        <li><i class="fa-solid fa-route me-2 theme-color"></i>Bhopal to Satna</li>
+                        <li><i class="fa-solid fa-route me-2 theme-color"></i>Bhopal to Chhindwara</li>
+                        <li><i class="fa-solid fa-route me-2 theme-color"></i>Bhopal to Khajuraho</li>
+                        <li><i class="fa-solid fa-route me-2 theme-color"></i>Bhopal to Hoshangabad</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- City Background Image -->
+        <div class="footer-image-wrap">
+            <img src="./asssets/img/footerbg.png" alt="City background" class="footer-city-img">
+        </div>
+
+        <style>
+            .footer-section {
+                background-color: #0d0d0d;
+                background-image: url('./asssets/img/texture.png');
+                background-size: cover;
+                background-repeat: repeat;
+                background-position: center;
+                color: white;
+                position: relative;
+                padding-bottom: 120px;
+            }
+
+            .social-icon {
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 6px;
+            }
+
+            ul li {
+                margin-bottom: 8px;
+                font-size: 14px;
+                cursor: pointer;
+            }
+
+            .footer-image-wrap {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                z-index: 0;
+                line-height: 0;
+            }
+
+            .theme-color {
+                color: #1ecb15 !important;
+            }
+
+            .footer-city-img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                display: block;
+                margin-bottom: -1px;
+                /* Fix any visible gap */
+            }
+
+            @media (max-width: 767px) {
+                .footer-section {
+                    padding-bottom: 150px;
+                }
+            }
+        </style>
+
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    </section>
+
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!--  -->
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
