@@ -188,7 +188,8 @@
                                     Comfortable long-distance travel with experienced drivers for all
                                     your outstation needs.
                                 </p>
-                                <a href="#">Book Now</a>
+                                <a href="https://wa.me/918823892940?text=Hello%2C%20I%20would%20like%20to%20book%20an%20outstation%20trip.%20Please%20share%20the%20details."
+                                    target="_blank">Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -205,7 +206,8 @@
                                     Reliable transportation solutions for your business needs with
                                     professional chauffeurs.
                                 </p>
-                                <a href="#">Book Now</a>
+                                <a href="https://wa.me/918823892940?text=Hello%2C%20I%20am%20interested%20in%20your%20corporate%20taxi%20services.%20Please%20provide%20more%20information."
+                                    target="_blank">Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -222,7 +224,8 @@
                                     Quick and convenient point-to-point travel within the city at
                                     competitive rates.
                                 </p>
-                                <a href="#">Book Now</a>
+                                <a href="https://wa.me/918823892940?text=Hello%2C%20I%20want%20to%20book%20a%20local%20taxi%20ride%20within%20Bhopal.%20Please%20assist%20with%20the%20booking."
+                                    target="_blank">Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -239,7 +242,8 @@
                                     On-time airport transfers with flight tracking and meet & greet
                                     services.
                                 </p>
-                                <a href="#">Book Now</a>
+                                <a href="https://wa.me/918823892940?text=Hello%2C%20I%20need%20an%20airport%20transfer%20service.%20Please%20share%20the%20options%20and%20pricing."
+                                    target="_blank">Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -256,12 +260,14 @@
                                     Swift and hassle-free pickup from Bhopal railway stations with
                                     real-time tracking.
                                 </p>
-                                <a href="#">Book Now</a>
+                                <a href="https://wa.me/918823892940?text=Hello%2C%20I%20need%20a%20railway%20station%20pickup%20in%20Bhopal.%20Please%20assist%20with%20booking."
+                                    target="_blank">Book Now</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </section>
 
 
@@ -284,28 +290,47 @@
                         <p class="online-booking">/// ONLINE BOOKING</p>
                         <h1>Book <span>your ride now!</span></h1>
                         <div class="form-grid">
-                            <div class="input-box"><i class="bi bi-person"></i><input type="text"
-                                    placeholder="Your Name">
+                            <div class="input-box"><i class="bi bi-person"></i>
+                                <input type="text" id="name" placeholder="Your Name">
                             </div>
-                            <div class="input-box"><i class="bi bi-telephone"></i><input type="text"
-                                    placeholder="Phone">
+                            <div class="input-box"><i class="bi bi-telephone"></i>
+                                <input type="text" id="phone" placeholder="Phone">
                             </div>
-                            <div class="input-box"><i class="bi bi-envelope"></i><input type="email"
-                                    placeholder="Email">
+                            <div class="input-box"><i class="bi bi-envelope"></i>
+                                <input type="email" id="email" placeholder="Email">
                             </div>
-
-                            <div class="input-box"><i class="bi bi-people"></i><input type="text"
-                                    placeholder="Passenger">
+                            <div class="input-box"><i class="bi bi-people"></i>
+                                <input type="text" id="passenger" placeholder="Passenger">
                             </div>
-                            <div class="input-box"><i class="bi bi-geo-alt"></i><input type="text"
-                                    placeholder="Start Destination"></div>
-                            <div class="input-box"><i class="bi bi-geo-alt-fill"></i><input type="text"
-                                    placeholder="End Destination"></div>
-
+                            <div class="input-box"><i class="bi bi-geo-alt"></i>
+                                <input type="text" id="start" placeholder="Start Destination">
+                            </div>
+                            <div class="input-box"><i class="bi bi-geo-alt-fill"></i>
+                                <input type="text" id="end" placeholder="End Destination">
+                            </div>
                         </div>
-                        <button class="book-btn">Book Your Taxi</button>
+
+                        <button class="book-btn" onclick="sendToWhatsApp()">Book Your Taxi</button>
                     </div>
                 </div>
+
+                <script>
+                    function sendToWhatsApp() {
+                        const name = document.getElementById("name").value;
+                        const phone = document.getElementById("phone").value;
+                        const email = document.getElementById("email").value;
+                        const passenger = document.getElementById("passenger").value;
+                        const start = document.getElementById("start").value;
+                        const end = document.getElementById("end").value;
+
+                        const message = `Hello,%20I%20would%20like%20to%20book%20a%20taxi.%0A%0AName:%20${encodeURIComponent(name)}%0APhone:%20${encodeURIComponent(phone)}%0AEmail:%20${encodeURIComponent(email)}%0APassengers:%20${encodeURIComponent(passenger)}%0AFrom:%20${encodeURIComponent(start)}%0ATo:%20${encodeURIComponent(end)}`;
+
+                        const url = `https://wa.me/918823892940?text=${message}`;
+
+                        window.open(url, '_blank');
+                    }
+                </script>
+
             </section>
         </div>
     </section>
@@ -352,172 +377,180 @@
         </style>
 
         <div class="container py-5">
-            <h1 class="text-center display-5 text-white fw-bold mb-5">Choose Your Ride</h1>
+    <h1 class="text-center display-5 text-white fw-bold mb-5">Choose Your Ride</h1>
 
-            <div class="row g-4">
-                <!-- Dzire -->
-                <div class="col-md-3 col-sm-6">
-                    <div class="car-card">
-                        <h5 class="card-title">Dzire - ₹10/km</h5>
-                        <div class="car-type">SEDAN</div>
-                        <!-- <div class="car-name">Dzire</div> -->
-                        <img src="./asssets/img/cars/06swift.png" alt="Dzire" class="car-img">
-                        <div class="info">Capacity: 4 Persons</div>
-                        <div class="info">AC</div>
-                    </div>
-                </div>
-
-                <!-- Alto -->
-                <div class="col-md-3 col-sm-6">
-                    <div class="car-card">
-                        <h5 class="card-title">Alto - ₹9/km</h5>
-                        <div class="car-type">HATCHBACK</div>
-                        <!-- <div class="car-name">Alto</div> -->
-                        <img src="./asssets/img/cars/05alto.png" alt="Alto" class="car-img">
-                        <div class="info">Capacity: 4 Persons</div>
-                        <div class="info">Non-AC</div>
-                    </div>
-                </div>
-
-                <!-- Aura -->
-                <div class="col-md-3 col-sm-6">
-                    <div class="car-card">
-                        <h5 class="card-title">Aura - ₹10/km</h5>
-                        <div class="car-type">SEDAN</div>
-                        <!-- <div class="car-name">Aura</div> -->
-                        <img src="./asssets/img/cars/04accent.png" alt="Aura" class="car-img">
-                        <div class="info">Capacity: 4 Persons</div>
-                        <div class="info">AC</div>
-                    </div>
-                </div>
-
-                <!-- Toyota Innova -->
-                <div class="col-md-3 col-sm-6">
-                    <div class="car-card">
-                        <h5 class="card-title">Toyota Innova - ₹15/km</h5>
-                        <div class="car-type">SUV</div>
-                        <!-- <div class="car-name">Toyota Innova</div> -->
-                        <img src="./asssets/img/cars/08innova.png" alt="Toyota Innova" class="car-img">
-                        <div class="info">Capacity: 7 Persons</div>
-                        <div class="info">AC</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row g-4 mt-2">
-                <!-- Toyota Innova Crysta -->
-                <div class="col-md-3 col-sm-6">
-                    <div class="car-card">
-                        <h5 class="card-title">Toyota Innova Crysta - ₹16/km</h5>
-                        <div class="car-type">SUV</div>
-                        <!-- <div class="car-name">Toyota Innova Crysta</div> -->
-                        <img src="./asssets/img/cars/08innova.png" alt="Innova Crysta" class="car-img">
-                        <div class="info">Capacity: 7 Persons</div>
-                        <div class="info">AC</div>
-                    </div>
-                </div>
-
-                <!-- 13/14 Seater Traveller -->
-                <div class="col-md-3 col-sm-6">
-                    <div class="car-card">
-                        <h5 class="card-title">13/14 Seater Traveller - ₹24/km</h5>
-                        <div class="car-type">TRAVELLER</div>
-                        <!-- <div class="car-name">13/14 Seater Traveller</div> -->
-                        <img src="./asssets/img/cars/07traveller.png" alt="Traveller 14" class="car-img">
-                        <div class="info">Capacity: 14 Persons</div>
-                        <div class="info">AC</div>
-                    </div>
-                </div>
-
-                <!-- 17 Seater Traveller -->
-                <div class="col-md-3 col-sm-6">
-                    <div class="car-card">
-                        <h5 class="card-title">17 Seater Traveller - ₹25/km</h5>
-                        <div class="car-type">TRAVELLER</div>
-                        <!-- <div class="car-name">17 Seater Traveller</div> -->
-                        <img src="./asssets/img/cars/07traveller.png" alt="Traveller 17" class="car-img">
-                        <div class="info">Capacity: 17 Persons</div>
-                        <div class="info">AC</div>
-                    </div>
-                </div>
-
-                <!-- 20 Seater Traveller -->
-                <div class="col-md-3 col-sm-6">
-                    <div class="car-card">
-                        <h5 class="card-title">20 Seater Traveller - ₹30/km</h5>
-                        <div class="car-type">TRAVELLER</div>
-                        <!-- <div class="car-name">20 Seater Traveller</div> -->
-                        <img src="./asssets/img/cars/07traveller.png" alt="Traveller 20" class="car-img">
-                        <div class="info">Capacity: 20 Persons</div>
-                        <div class="info">AC</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row g-4 mt-2">
-                <!-- Swift -->
-                <div class="col-md-3 col-sm-6">
-                    <div class="car-card">
-                        <h5 class="card-title">Swift - ₹11/km</h5>
-                        <div class="car-type">HATCHBACK</div>
-                        <!-- <div class="car-name">Swift</div> -->
-                        <img src="./asssets/img/cars/06swift.png" alt="Swift" class="car-img">
-                        <div class="info">Capacity: 4 Persons</div>
-                        <div class="info">AC</div>
-                    </div>
-                </div>
-
-                <!-- Tata Indigo -->
-                <div class="col-md-3 col-sm-6">
-                    <div class="car-card">
-                        <h5 class="card-title">Tata Indica - ₹11/km</h5>
-                        <div class="car-type">SEDAN</div>
-                        <!-- <div class="car-name">Tata Indica</div> -->
-                        <img src="./asssets/img/cars/03indica.png" alt="Indigo" class="car-img">
-                        <div class="info">Capacity: 4 Persons</div>
-                        <div class="info">AC</div>
-                    </div>
-                </div>
-
-                <!-- Maruti Ertiga -->
-                <div class="col-md-3 col-sm-6">
-                    <div class="car-card">
-                        <h5 class="card-title">Ertiga - ₹14/km</h5>
-                        <div class="car-type">MPV</div>
-                        <!-- <div class="car-name">Maruti Ertiga</div> -->
-                        <img src="./asssets/img/cars/02ertiga.png" alt="Ertiga" class="car-img">
-                        <div class="info">Capacity: 6 Persons</div>
-                        <div class="info">AC</div>
-                    </div>
-                </div>
-
-                <!-- Hyundai Creta -->
-                <div class="col-md-3 col-sm-6">
-                    <div class="car-card">
-                        <h5 class="card-title"> Creta - ₹14/km</h5>
-                        <div class="car-type">SUV</div>
-                        <!-- <div class="car-name">Hyundai Creta</div> -->
-                        <img src="./asssets/img/cars/01creta.png" alt="Creta" class="car-img">
-                        <div class="info">Capacity: 5 Persons</div>
-                        <div class="info">AC</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row g-4 mt-2">
-                <!-- Hyundai Xcent -->
-                <div class="col-md-3 col-sm-6">
-                    <div class="car-card">
-                        <h5 class="card-title">Xcent - ₹11/km</h5>
-                        <div class="car-type">SEDAN</div>
-                        <!-- <div class="car-name">Hyundai Xcent</div> -->
-                        <img src="./asssets/img/cars/04accent.png" alt="Xcent" class="car-img">
-                        <div class="info">Capacity: 4 Persons</div>
-                        <div class="info">AC</div>
-                    </div>
-                </div>
+    <div class="row g-4">
+        <!-- Alto -->
+        <div class="col-md-3 col-sm-6">
+            <div class="car-card" onclick="redirectToWhatsApp('Alto', '9')">
+                <h5 class="card-title">Alto - ₹9/km</h5>
+                <div class="car-type">HATCHBACK</div>
+                <img src="./asssets/img/cars/05alto.png" alt="Alto" class="car-img">
+                <div class="info">Capacity: 4 Persons</div>
+                <div class="info">Non-AC</div>
             </div>
         </div>
+
+        <!-- Dzire -->
+        <div class="col-md-3 col-sm-6">
+            <div class="car-card" onclick="redirectToWhatsApp('Dzire', '10')">
+                <h5 class="card-title">Dzire - ₹10/km</h5>
+                <div class="car-type">SEDAN</div>
+                <img src="./asssets/img/cars/06swift.png" alt="Dzire" class="car-img">
+                <div class="info">Capacity: 4 Persons</div>
+                <div class="info">AC</div>
+            </div>
+        </div>
+
+        <!-- Aura -->
+        <div class="col-md-3 col-sm-6">
+            <div class="car-card" onclick="redirectToWhatsApp('Aura', '10')">
+                <h5 class="card-title">Aura - ₹10/km</h5>
+                <div class="car-type">SEDAN</div>
+                <img src="./asssets/img/cars/04accent.png" alt="Aura" class="car-img">
+                <div class="info">Capacity: 4 Persons</div>
+                <div class="info">AC</div>
+            </div>
+        </div>
+
+        <!-- Swift -->
+        <div class="col-md-3 col-sm-6">
+            <div class="car-card" onclick="redirectToWhatsApp('Swift', '11')">
+                <h5 class="card-title">Swift - ₹11/km</h5>
+                <div class="car-type">HATCHBACK</div>
+                <img src="./asssets/img/cars/06swift.png" alt="Swift" class="car-img">
+                <div class="info">Capacity: 4 Persons</div>
+                <div class="info">AC</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 mt-2">
+        <!-- Tata Indigo -->
+        <div class="col-md-3 col-sm-6">
+            <div class="car-card" onclick="redirectToWhatsApp('Tata Indica', '11')">
+                <h5 class="card-title">Tata Indica - ₹11/km</h5>
+                <div class="car-type">SEDAN</div>
+                <img src="./asssets/img/cars/03indica.png" alt="Indigo" class="car-img">
+                <div class="info">Capacity: 4 Persons</div>
+                <div class="info">AC</div>
+            </div>
+        </div>
+
+        <!-- Hyundai Xcent -->
+        <div class="col-md-3 col-sm-6">
+            <div class="car-card" onclick="redirectToWhatsApp('Xcent', '11')">
+                <h5 class="card-title">Xcent - ₹11/km</h5>
+                <div class="car-type">SEDAN</div>
+                <img src="./asssets/img/cars/04accent.png" alt="Xcent" class="car-img">
+                <div class="info">Capacity: 4 Persons</div>
+                <div class="info">AC</div>
+            </div>
+        </div>
+
+        <!-- Ertiga -->
+        <div class="col-md-3 col-sm-6">
+            <div class="car-card" onclick="redirectToWhatsApp('Ertiga', '14')">
+                <h5 class="card-title">Ertiga - ₹14/km</h5>
+                <div class="car-type">MPV</div>
+                <img src="./asssets/img/cars/02ertiga.png" alt="Ertiga" class="car-img">
+                <div class="info">Capacity: 6 Persons</div>
+                <div class="info">AC</div>
+            </div>
+        </div>
+
+        <!-- Hyundai Creta -->
+        <div class="col-md-3 col-sm-6">
+            <div class="car-card" onclick="redirectToWhatsApp('Creta', '14')">
+                <h5 class="card-title"> Creta - ₹14/km</h5>
+                <div class="car-type">SUV</div>
+                <img src="./asssets/img/cars/01creta.png" alt="Creta" class="car-img">
+                <div class="info">Capacity: 5 Persons</div>
+                <div class="info">AC</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 mt-2">
+        <!-- Toyota Innova -->
+        <div class="col-md-3 col-sm-6">
+            <div class="car-card" onclick="redirectToWhatsApp('Toyota Innova', '15')">
+                <h5 class="card-title">Toyota Innova - ₹15/km</h5>
+                <div class="car-type">SUV</div>
+                <img src="./asssets/img/cars/08innova.png" alt="Toyota Innova" class="car-img">
+                <div class="info">Capacity: 7 Persons</div>
+                <div class="info">AC</div>
+            </div>
+        </div>
+
+        <!-- Toyota Innova Crysta -->
+        <div class="col-md-3 col-sm-6">
+            <div class="car-card" onclick="redirectToWhatsApp('Toyota Innova Crysta', '16')">
+                <h5 class="card-title">Toyota Innova Crysta - ₹16/km</h5>
+                <div class="car-type">SUV</div>
+                <img src="./asssets/img/cars/08innova.png" alt="Innova Crysta" class="car-img">
+                <div class="info">Capacity: 7 Persons</div>
+                <div class="info">AC</div>
+            </div>
+        </div>
+
+        <!-- 13/14 Seater Traveller -->
+        <div class="col-md-3 col-sm-6">
+            <div class="car-card" onclick="redirectToWhatsApp('13/14 Seater Traveller', '24')">
+                <h5 class="card-title">13/14 Seater Traveller - ₹24/km</h5>
+                <div class="car-type">TRAVELLER</div>
+                <img src="./asssets/img/cars/07traveller.png" alt="Traveller 14" class="car-img">
+                <div class="info">Capacity: 14 Persons</div>
+                <div class="info">AC</div>
+            </div>
+        </div>
+
+        <!-- 17 Seater Traveller -->
+        <div class="col-md-3 col-sm-6">
+            <div class="car-card" onclick="redirectToWhatsApp('17 Seater Traveller', '25')">
+                <h5 class="card-title">17 Seater Traveller - ₹25/km</h5>
+                <div class="car-type">TRAVELLER</div>
+                <img src="./asssets/img/cars/07traveller.png" alt="Traveller 17" class="car-img">
+                <div class="info">Capacity: 17 Persons</div>
+                <div class="info">AC</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 mt-2">
+        <!-- 20 Seater Traveller -->
+        <div class="col-md-3 col-sm-6">
+            <div class="car-card" onclick="redirectToWhatsApp('20 Seater Traveller', '30')">
+                <h5 class="card-title">20 Seater Traveller - ₹30/km</h5>
+                <div class="car-type">TRAVELLER</div>
+                <img src="./asssets/img/cars/07traveller.png" alt="Traveller 20" class="car-img">
+                <div class="info">Capacity: 20 Persons</div>
+                <div class="info">AC</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function redirectToWhatsApp(carName, pricePerKm) {
+        // Replace this phone number with your actual WhatsApp number
+        const phoneNumber = "919876543210";
+        
+        // Create the WhatsApp message
+        const message = `Hello, I'm interested in booking the ${carName} (₹${pricePerKm}/km) for my ride. Please provide more details.`;
+        
+        // Encode the message for URL
+        const encodedMessage = encodeURIComponent(message);
+        
+        // Create the WhatsApp URL
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+        
+        // Open the URL in a new tab
+        window.open(whatsappUrl, '_blank');
+    }
+</script>
+
+
 
 
     </section>
@@ -551,10 +584,12 @@
                             <div class="ctb-feature"><i class="fas fa-car"></i><span>Swift</span></div>
                             <div class="ctb-feature"><i class="fas fa-hotel"></i><span>Day Trip</span></div>
                         </div>
-                        <button class="ctb-package-btn">
-                            <a href="https://wa.me/918823892940?text=I%20want%20to%20book%20Bhopal%20to%20Sanchi%20Tour%20(50km%2C%201.5%20hours%2C%20Swift%2C%20Day%20Trip)"
-                                target="_blank" class="text-white text-decoration-none">Book Now</a>
-                        </button>
+                        <a href="https://wa.me/918823892940?text=I%20want%20to%20book%20Bhopal%20to%20Sanchi%20Tour%20(50km%2C%201.5%20hours%2C%20Swift%2C%20Day%20Trip)"
+                            target="_blank" class="text-white text-decoration-none"> <button
+                                class="ctb-package-btn">Book Now
+
+                            </button> </a>
+
                     </div>
                 </div>
 
@@ -576,10 +611,11 @@
                             <div class="ctb-feature"><i class="fas fa-car"></i><span>Swift</span></div>
                             <div class="ctb-feature"><i class="fas fa-hotel"></i><span>Riverside Stay</span></div>
                         </div>
-                        <button class="ctb-package-btn">
-                            <a href="https://wa.me/918823892940?text=I%20want%20to%20book%20Bhopal%20to%20Narmadapuram%20Tour%20(120km%2C%202.5%20hours%2C%20Swift%2C%20Riverside%20Stay)"
-                                target="_blank" class="text-white text-decoration-none">Book Now</a>
-                        </button>
+                        <a href="https://wa.me/918823892940?text=I%20want%20to%20book%20Bhopal%20to%20Narmadapuram%20Tour%20(120km%2C%202.5%20hours%2C%20Swift%2C%20Riverside%20Stay)"
+                            target="_blank" class="text-white text-decoration-none"> <button class="ctb-package-btn">
+                                Book Now
+                            </button></a>
+
                     </div>
                 </div>
 
@@ -601,10 +637,11 @@
                             <div class="ctb-feature"><i class="fas fa-car"></i><span>Swift</span></div>
                             <div class="ctb-feature"><i class="fas fa-hotel"></i><span>Temple Visit</span></div>
                         </div>
-                        <button class="ctb-package-btn">
-                            <a href="https://wa.me/918823892940?text=I%20want%20to%20book%20Bhopal%20to%20Salkanpur%20Tour%20(80km%2C%202%20hours%2C%20Swift%2C%20Temple%20Visit)"
-                                target="_blank" class="text-white text-decoration-none">Book Now</a>
-                        </button>
+                        <a href="https://wa.me/918823892940?text=I%20want%20to%20book%20Bhopal%20to%20Salkanpur%20Tour%20(80km%2C%202%20hours%2C%20Swift%2C%20Temple%20Visit)"
+                            target="_blank" class="text-white text-decoration-none"> <button class="ctb-package-btn">
+                                Book Now
+                            </button></a>
+
                     </div>
                 </div>
             </div>
@@ -629,10 +666,11 @@
                             <div class="ctb-feature"><i class="fas fa-car"></i><span>Swift </span></div>
                             <div class="ctb-feature"><i class="fas fa-hotel"></i><span>2★ Stay</span></div>
                         </div>
-                        <button class="ctb-package-btn">
-                            <a href="https://wa.me/918823892940?text=I%20want%20to%20book%20Bhopal%20to%20Ujjain%20Tour%20(190km%2C%204%20hours%2C%20Innova%2C%202%E2%98%85%20Stay)"
-                                target="_blank" class="text-white text-decoration-none">Book Now</a>
-                        </button>
+                        <a href="https://wa.me/918823892940?text=I%20want%20to%20book%20Bhopal%20to%20Ujjain%20Tour%20(190km%2C%204%20hours%2C%20Innova%2C%202%E2%98%85%20Stay)"
+                            target="_blank" class="text-white text-decoration-none"><button class="ctb-package-btn">
+                                Book Now
+                            </button></a>
+
                     </div>
                 </div>
 
@@ -654,10 +692,12 @@
                             <div class="ctb-feature"><i class="fas fa-car"></i><span>Swift</span></div>
                             <div class="ctb-feature"><i class="fas fa-hotel"></i><span>3★ Stay</span></div>
                         </div>
-                        <button class="ctb-package-btn">
-                            <a href="https://wa.me/918823892940?text=I%20want%20to%20book%20Bhopal%20to%20Omkareshwar%20Tour%20(260km%2C%205.5%20hours%2C%20Innova%2C%203%E2%98%85%20Stay)"
-                                target="_blank" class="text-white text-decoration-none">Book Now</a>
-                        </button>
+
+                        <a href="https://wa.me/918823892940?text=I%20want%20to%20book%20Bhopal%20to%20Omkareshwar%20Tour%20(260km%2C%205.5%20hours%2C%20Innova%2C%203%E2%98%85%20Stay)"
+                            target="_blank" class="text-white text-decoration-none"><button class="ctb-package-btn">
+                                Book Now
+                            </button></a>
+
                     </div>
                 </div>
 
@@ -679,19 +719,16 @@
                             <div class="ctb-feature"><i class="fas fa-car"></i><span>Swift</span></div>
                             <div class="ctb-feature"><i class="fas fa-hotel"></i><span>3★ Resort</span></div>
                         </div>
-                        <button class="ctb-package-btn">
-                            <a href="https://wa.me/918823892940?text=I%20want%20to%20book%20Bhopal%20to%20Pachmarhi%20Tour%20(210km%2C%205%20hours%2C%20Marazzo%2C%203%E2%98%85%20Resort)"
-                                target="_blank" class="text-white text-decoration-none">Book Now</a>
-                        </button>
+                        <a href="https://wa.me/918823892940?text=I%20want%20to%20book%20Bhopal%20to%20Pachmarhi%20Tour%20(210km%2C%205%20hours%2C%20Marazzo%2C%203%E2%98%85%20Resort)"
+                            target="_blank" class="text-white text-decoration-none"> <button class="ctb-package-btn">
+                                Book Now
+                            </button></a>
+
                     </div>
                 </div>
             </div>
 
-            <div class="ctb-view-all">
-                <a href="#" class="ctb-view-all-btn">
-                    Explore All Packages <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
+
         </div>
     </section>
 
