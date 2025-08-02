@@ -269,8 +269,9 @@
     </section>
 
     <!-- Hero Section ENDS -->
-    <!-- ONLINE BOOKING SECTION  -->
-    <section>
+
+  <!-- ONLINE BOOKING SECTION  -->
+      <section>
         <div class="booking-container">
             <section class="booking">
                 <div class="left-column">
@@ -281,30 +282,49 @@
                 <div class="right-column">
                     <div class="right-overlay">
                         <p class="online-booking">/// ONLINE BOOKING</p>
-                        <h1>Book <span>your ride now!</span></h1>
+                        <h1>Book <span>your ride now</span></h1>
                         <div class="form-grid">
-                            <div class="input-box"><i class="bi bi-person"></i><input type="text"
-                                    placeholder="Your Name">
+                            <div class="input-box"><i class="bi bi-person"></i>
+                                <input type="text" id="name" placeholder="Your Name">
                             </div>
-                            <div class="input-box"><i class="bi bi-telephone"></i><input type="text"
-                                    placeholder="Phone">
+                            <div class="input-box"><i class="bi bi-telephone"></i>
+                                <input type="text" id="phone" placeholder="Phone">
                             </div>
-                            <div class="input-box"><i class="bi bi-envelope"></i><input type="email"
-                                    placeholder="Email">
+                            <div class="input-box"><i class="bi bi-envelope"></i>
+                                <input type="email" id="email" placeholder="Email">
                             </div>
-
-                            <div class="input-box"><i class="bi bi-people"></i><input type="text"
-                                    placeholder="Passenger">
+                            <div class="input-box"><i class="bi bi-people"></i>
+                                <input type="text" id="passenger" placeholder="Passenger">
                             </div>
-                            <div class="input-box"><i class="bi bi-geo-alt"></i><input type="text"
-                                    placeholder="Start Destination"></div>
-                            <div class="input-box"><i class="bi bi-geo-alt-fill"></i><input type="text"
-                                    placeholder="End Destination"></div>
-
+                            <div class="input-box"><i class="bi bi-geo-alt"></i>
+                                <input type="text" id="start" placeholder="Start Destination">
+                            </div>
+                            <div class="input-box"><i class="bi bi-geo-alt-fill"></i>
+                                <input type="text" id="end" placeholder="End Destination">
+                            </div>
                         </div>
-                        <button class="book-btn">Book Your Taxi</button>
+
+                        <button class="book-btn" onclick="sendToWhatsApp()">Book Your Taxi</button>
                     </div>
                 </div>
+
+                <script>
+                    function sendToWhatsApp() {
+                        const name = document.getElementById("name").value;
+                        const phone = document.getElementById("phone").value;
+                        const email = document.getElementById("email").value;
+                        const passenger = document.getElementById("passenger").value;
+                        const start = document.getElementById("start").value;
+                        const end = document.getElementById("end").value;
+
+                        const message = `Hello,%20I%20would%20like%20to%20book%20a%20taxi.%0A%0AName:%20${encodeURIComponent(name)}%0APhone:%20${encodeURIComponent(phone)}%0AEmail:%20${encodeURIComponent(email)}%0APassengers:%20${encodeURIComponent(passenger)}%0AFrom:%20${encodeURIComponent(start)}%0ATo:%20${encodeURIComponent(end)}`;
+
+                        const url = `https://wa.me/918823892940?text=${message}`;
+
+                        window.open(url, '_blank');
+                    }
+                </script>
+
             </section>
         </div>
     </section>
