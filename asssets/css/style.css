@@ -1143,6 +1143,7 @@
  }
 
  .ctb-package-card {
+    margin-top: 15px ;
      background: white;
      border-radius: 16px;
      overflow: hidden;
