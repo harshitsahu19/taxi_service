@@ -129,155 +129,226 @@
 
 
 
-    <!-- Premium Taxi Services Section -->
-    <section class="taxi-service-section">
-        <!-- Background elements -->
-        <div class="tx-bg-elements">
-            <div class="tx-bg-circle tx-bg-circle-1"></div>
-            <div class="tx-bg-circle tx-bg-circle-2"></div>
+   <section>
+        <section class="py-5">
+            <div class="container">
+                <div class="row justify-content-center g-4">
+    <!-- Card 1 -->
+    <div class="col-lg col-md-4 col-sm-6 col-12">
+        <div class="custom-card">
+            <div class="icon-container">
+                <i class="fa-solid fa-route"></i>
+            </div>
+            <div class="card-header-custom"></div>
+            <div class="card-body-custom">
+                <h5 class="card-title">Outstation Trip</h5>
+                <p class="card-text">Enjoy smooth and comfortable outstation rides at affordable prices.</p>
+                <button class="btn btn-success book-btn" data-service="Outstation Trip" style="background-color: #1ecb15 !important; border-color: #1ecb15 !important;">Book Now</button>
+            </div>
         </div>
+    </div>
 
-        <section>
-            <style>
-                .tx-card-row {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-between;
-                    gap: 20px;
-                }
+    <!-- Card 2 -->
+    <div class="col-lg col-md-4 col-sm-6 col-12">
+        <div class="custom-card">
+            <div class="icon-container">
+                <i class="fa-solid fa-train"></i>
+            </div>
+            <div class="card-header-custom"></div>
+            <div class="card-body-custom">
+                <h5 class="card-title">Railway Pickup</h5>
+                <p class="card-text">On-time pickup and drop service to and from railway stations.</p>
+                <button class="btn btn-success book-btn" data-service="Railway Pickup" style="background-color: #1ecb15 !important; border-color: #1ecb15 !important;">Book Now</button>
+            </div>
+        </div>
+    </div>
 
-                .tx-card-row>div {
-                    flex: 1 1 calc(20% - 20px);
-                    min-width: 220px;
-                }
+    <!-- Card 3 -->
+    <div class="col-lg col-md-4 col-sm-6 col-12">
+        <div class="custom-card">
+            <div class="icon-container">
+                <i class="fa-solid fa-plane-departure"></i>
+            </div>
+            <div class="card-header-custom"></div>
+            <div class="card-body-custom">
+                <h5 class="card-title">Airport Pickup</h5>
+                <p class="card-text">Hassle-free airport pickup and drop service with punctuality.</p>
+                <button class="btn btn-success book-btn" data-service="Airport Pickup" style="background-color: #1ecb15 !important; border-color: #1ecb15 !important;">Book Now</button>
+            </div>
+        </div>
+    </div>
 
-                @media (max-width: 992px) {
-                    .tx-card-row>div {
-                        flex: 1 1 calc(50% - 20px);
-                    }
-                }
+    <!-- Card 4 -->
+    <div class="col-lg col-md-4 col-sm-6 col-12">
+        <div class="custom-card">
+            <div class="icon-container">
+                <i class="fa-solid fa-briefcase"></i>
+            </div>
+            <div class="card-header-custom"></div>
+            <div class="card-body-custom">
+                <h5 class="card-title">Corporate Trip</h5>
+                <p class="card-text">Professional and punctual service tailored for business needs.</p>
+                <button class="btn btn-success book-btn" data-service="Corporate Trip" style="background-color: #1ecb15 !important; border-color: #1ecb15 !important;">Book Now</button>
+            </div>
+        </div>
+    </div>
 
-                @media (max-width: 576px) {
-                    .tx-card-row>div {
-                        flex: 1 1 100%;
-                    }
-                }
-
-                .tx-container {
-                    max-width: 1200px;
-                    margin: 0 auto;
-                    padding: 20px;
-                }
-            </style>
-
-            <div class="tx-container">
-                <div class="tx-section-header">
-                    <h2>Premium Taxi Services Bhopal</h2>
-                    <p>
-                        Choose from our exclusive range of transportation solutions tailored to
-                        your specific needs
-                    </p>
-                </div>
-
-                <div class="tx-card-row">
-                    <!-- Outstation Trips -->
-                    <div class="tx-card__bx tx-card__outstation">
-                        <div class="tx-card__data">
-                            <div class="tx-card__icon">
-                                <div class="tx-card__icon-bx"><i class="fas fa-route"></i></div>
-                            </div>
-                            <div class="tx-card__content">
-                                <h3>Outstation Trips</h3>
-                                <p>
-                                    Comfortable long-distance travel with experienced drivers for all
-                                    your outstation needs.
-                                </p>
-                                <a href="https://wa.me/918823892940?text=Hello%2C%20I%20would%20like%20to%20book%20an%20outstation%20trip.%20Please%20share%20the%20details."
-                                    target="_blank">Book Now</a>
-                            </div>
+    <!-- Card 5 -->
+    <div class="col-lg col-md-4 col-sm-6 col-12">
+        <div class="custom-card">
+            <div class="icon-container">
+                <i class="fa-solid fa-city"></i>
+            </div>
+            <div class="card-header-custom"></div>
+            <div class="card-body-custom">
+                <h5 class="card-title">Local Trips</h5>
+                <p class="card-text">Explore the city with our reliable and budget-friendly local rides.</p>
+                <button class="btn btn-success book-btn" data-service="Local Trips" style="background-color: #1ecb15 !important; border-color: #1ecb15 !important;">Book Now</button>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </section>
+        <!-- Single Modal for all services -->
+        <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="bookingModalLabel">Trip Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" id="selectedService">
+                        <div class="mb-3">
+                            <label for="fromLocation" class="form-label">From</label>
+                            <input type="text" class="form-control" id="fromLocation" placeholder="Starting location">
+                        </div>
+                        <div class="mb-3">
+                            <label for="toLocation" class="form-label">To</label>
+                            <input type="text" class="form-control" id="toLocation" placeholder="Destination">
                         </div>
                     </div>
-
-                    <!-- Corporate Services -->
-                    <div class="tx-card__bx tx-card__corporate">
-                        <div class="tx-card__data">
-                            <div class="tx-card__icon">
-                                <div class="tx-card__icon-bx"><i class="fas fa-briefcase"></i></div>
-                            </div>
-                            <div class="tx-card__content">
-                                <h3>Corporate</h3>
-                                <p>
-                                    Reliable transportation solutions for your business needs with
-                                    professional chauffeurs.
-                                </p>
-                                <a href="https://wa.me/918823892940?text=Hello%2C%20I%20am%20interested%20in%20your%20corporate%20taxi%20services.%20Please%20provide%20more%20information."
-                                    target="_blank">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Local Trips -->
-                    <div class="tx-card__bx tx-card__local">
-                        <div class="tx-card__data">
-                            <div class="tx-card__icon">
-                                <div class="tx-card__icon-bx"><i class="fas fa-city"></i></div>
-                            </div>
-                            <div class="tx-card__content">
-                                <h3>Local Trips</h3>
-                                <p>
-                                    Quick and convenient point-to-point travel within the city at
-                                    competitive rates.
-                                </p>
-                                <a href="https://wa.me/918823892940?text=Hello%2C%20I%20want%20to%20book%20a%20local%20taxi%20ride%20within%20Bhopal.%20Please%20assist%20with%20the%20booking."
-                                    target="_blank">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Airport Trips -->
-                    <div class="tx-card__bx tx-card__airport">
-                        <div class="tx-card__data">
-                            <div class="tx-card__icon">
-                                <div class="tx-card__icon-bx"><i class="fas fa-plane"></i></div>
-                            </div>
-                            <div class="tx-card__content">
-                                <h3>Airport Trips</h3>
-                                <p>
-                                    On-time airport transfers with flight tracking and meet & greet
-                                    services.
-                                </p>
-                                <a href="https://wa.me/918823892940?text=Hello%2C%20I%20need%20an%20airport%20transfer%20service.%20Please%20share%20the%20options%20and%20pricing."
-                                    target="_blank">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Railway Station Pickup -->
-                    <div class="tx-card__bx tx-card__railway">
-                        <div class="tx-card__data">
-                            <div class="tx-card__icon">
-                                <div class="tx-card__icon-bx"><i class="fas fa-train"></i></div>
-                            </div>
-                            <div class="tx-card__content">
-                                <h3>Railway Pickup</h3>
-                                <p>
-                                    Swift and hassle-free pickup from Bhopal railway stations with
-                                    real-time tracking.
-                                </p>
-                                <a href="https://wa.me/918823892940?text=Hello%2C%20I%20need%20a%20railway%20station%20pickup%20in%20Bhopal.%20Please%20assist%20with%20booking."
-                                    target="_blank">Book Now</a>
-                            </div>
-                        </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-success" style="background-color: #1ecb15 !important; border-color: #1ecb15 !important;" onclick="bookService()">Book Now</button>
                     </div>
                 </div>
             </div>
+        </div>
 
-        </section>
+        <script>
+            // When any book button is clicked
+            document.querySelectorAll('.book-btn').forEach(button => {
+                button.addEventListener('click', function () {
+                    const service = this.getAttribute('data-service');
+                    document.getElementById('selectedService').value = service;
+                    document.getElementById('bookingModalLabel').textContent = `${service} Details`;
+                    const modal = new bootstrap.Modal(document.getElementById('bookingModal'));
+                    modal.show();
+                });
+            });
 
+            // Single booking function for all services
+            function bookService() {
+                const service = document.getElementById('selectedService').value;
+                const from = document.getElementById('fromLocation').value;
+                const to = document.getElementById('toLocation').value;
 
+                if (!from || !to) {
+                    alert('Please enter both From and To locations');
+                    return;
+                }
 
+                const message = `I want to book ${service} from ${from} to ${to}`;
+                window.open(`https://wa.me/918823892940?text=${encodeURIComponent(message)}`, '_blank');
+
+                // Close modal and clear fields
+                bootstrap.Modal.getInstance(document.getElementById('bookingModal')).hide();
+                document.getElementById('fromLocation').value = '';
+                document.getElementById('toLocation').value = '';
+            }
+        </script>
+        <style>
+            .custom-card {
+                background-color: #fff;
+                border-radius: 16px;
+                overflow: hidden;
+                position: relative;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                border: 1px solid #e0e0e0;
+                height: 100%;
+            }
+
+            .card-header-custom {
+                background-color: #1ecb15;
+                height: 70px;
+                width: 100%;
+            }
+
+            .icon-container {
+                position: absolute;
+                top: 35px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: #fff;
+                border: 3px solid #1ecb15;
+                border-radius: 50%;
+                padding: 15px;
+                z-index: 2;
+            }
+
+            .icon-container i {
+                font-size: 28px;
+                color: #1ecb15;
+            }
+
+            .card-body-custom {
+                text-align: center;
+                padding: 60px 20px 20px;
+                position: relative;
+                z-index: 1;
+            }
+
+            .btn-success {
+                background-color: #1ecb15;
+                border-color: #1ecb15;
+            }
+
+            .btn-success:hover {
+                background-color: #17a314;
+                border-color: #17a314;
+            }
+
+            @media (max-width: 1199px) {
+                .col-lg {
+                    flex: 0 0 20%;
+                    max-width: 20%;
+                }
+            }
+
+            @media (max-width: 991px) {
+                .col-lg {
+                    flex: 0 0 33.333333%;
+                    max-width: 33.333333%;
+                }
+            }
+
+            @media (max-width: 767px) {
+                .col-lg {
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                }
+            }
+
+            @media (max-width: 575px) {
+                .col-lg {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                }
+            }
+        </style>
     </section>
-    <!-- Premium Taxi Services Ends -->
 
 
     <!-- ONLINE BOOKING SECTION  -->
