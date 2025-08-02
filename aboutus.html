@@ -1,16 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bhopal Taxi Servicess</title>
+    <title>Bhopal Taxi Services</title>
+
+    <!-- Favicon (Logo in Tab) -->
+    <link rel="icon" href="./asssets/img/navLogo1.png" type="image/png">
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./asssets/css/style.css">
-
 </head>
 
 <body>
@@ -41,23 +41,21 @@
 
             <nav class="navbar ">
                 <div class="container">
-                    <a href="./index.html">
-                        <div class="logo">
-                            <img src="./asssets/img/navLogo.png" alt="TaxiGo Logo">
-                        </div>
-                    </a>
-
+                    <div class="logo">
+                      <a href="./index.html"><img src="./asssets/img/navLogo.png" alt="TaxiGo Logo"></a>  
+                    </div>
 
                     <div class="nav-links">
                         <div class="close-btn">&times;</div>
                         <a href="./index.html">Home</a>
                         <a href="./services.html">Services</a>
                         <a href="./pricing.html">Pricing</a>
-                        <a href="./aboutus.html">About</a>
+                        <a href="#">About</a>
                         <a href="./contact.html">Contact</a>
-                         <a href="https://wa.me/918823892940?text=Hello%2C%20I%20want%20to%20book%20a%20taxi%20in%20Bhopal.%20Please%20assist%20with%20the%20booking%20process."
-                        target="_blank"><button class="book-now-btn">Book Now</button></a>
-                        
+
+                        <a href="https://wa.me/918823892940?text=Hello%2C%20I%20want%20to%20book%20a%20taxi%20in%20Bhopal.%20Please%20assist%20with%20the%20booking%20process."
+                            target="_blank"><button class="book-now-btn">Book Now</button></a>
+
                     </div>
 
                     <div class="hamburger">
@@ -93,7 +91,7 @@
 
     <!-- Hero Section STARTS -->
     <section class="services-hero"
-        style="background-image: url('https://images.unsplash.com/photo-1599721489452-b71f4375428b?q=80&w=1239&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+        style="background-image: url('https://images.unsplash.com/photo-1458334225161-a5cd4c6ad560?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
         <style>
             .services-hero {
                 position: relative;
@@ -241,17 +239,19 @@
             }
         </style>
         <div class="services-hero-content">
-            <h1>Get in Touch With Us</h1>
-            <p>Have questions or need assistance? We’re here to help you 24/7.</p>
+            <h1>About Our Company</h1>
+            <p>Discover who we are and our commitment to providing exceptional service to our customers.</p>
 
             <div class="service-cards">
                 <div class="service-card">
-                    <h3>Call or WhatsApp</h3>
-                    <p>Speak to our support team directly at our whatsapp</p>
+                    <h3>Our Story</h3>
+                    <p>Founded with a passion for reliable transportation, we've grown to become a trusted name in the
+                        industry.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Email Support</h3>
-                    <p>Send us your queries at Email</p>
+                    <h3>Our Mission</h3>
+                    <p>To deliver safe, comfortable, and punctual transportation services that exceed customer
+                        expectations.</p>
                 </div>
             </div>
             <div class="hero-buttons">
@@ -269,47 +269,338 @@
     </section>
 
     <!-- Hero Section ENDS -->
-    <!-- ONLINE BOOKING SECTION  -->
-    <section>
-        <div class="booking-container">
-            <section class="booking">
-                <div class="left-column">
-                    <div class="left-overlay">
-                        <img src="./asssets/img/demo.png" alt="Taxi" class="taxi-car" />
-                    </div>
-                </div>
-                <div class="right-column">
-                    <div class="right-overlay">
-                        <p class="online-booking">/// ONLINE BOOKING</p>
-                        <h1>Book <span>your ride now!</span></h1>
-                        <div class="form-grid">
-                            <div class="input-box"><i class="bi bi-person"></i><input type="text"
-                                    placeholder="Your Name">
-                            </div>
-                            <div class="input-box"><i class="bi bi-telephone"></i><input type="text"
-                                    placeholder="Phone">
-                            </div>
-                            <div class="input-box"><i class="bi bi-envelope"></i><input type="email"
-                                    placeholder="Email">
-                            </div>
 
-                            <div class="input-box"><i class="bi bi-people"></i><input type="text"
-                                    placeholder="Passenger">
-                            </div>
-                            <div class="input-box"><i class="bi bi-geo-alt"></i><input type="text"
-                                    placeholder="Start Destination"></div>
-                            <div class="input-box"><i class="bi bi-geo-alt-fill"></i><input type="text"
-                                    placeholder="End Destination"></div>
 
-                        </div>
-                        <button class="book-btn">Book Your Taxi</button>
-                    </div>
-                </div>
-            </section>
+    <section class="about-section py-5">
+  <div class="container">
+    <div class="text-center mb-4">
+      <!-- Logo Placeholder - Replace with your actual logo -->
+      <div class="logo-placeholder mb-3" style="height: 80px;">
+       <a href="./index.html"> <img src="./asssets/img/navLogo.png" 
+             alt="Bhopal Taxi Service Logo" 
+             class="h-100"></a>
+      </div>
+      <h1 class="display-5 fw-bold" style="color: #1ecb15;">About Bhopal Taxi Servicee</h1>
+      <p class="lead">Your trusted transportation partner in the City of Lakes</p>
+      <div class="divider mx-auto"></div>
+    </div>
+
+    <div class="row align-items-center g-5 mb-5">
+      <div class="col-lg-6">
+        <img src="./asssets/aboutus.png" 
+             alt="Our Taxi Fleet" 
+             class="img-fluid rounded">
+      </div>
+      <div class="col-lg-6">
+        <h2 class="fw-bold mb-4">Our Story</h2>
+        <p class="lead">Founded in Anand Nagar, Bhopal, we began with a simple mission: to provide reliable and affordable transportation solutions.</p>
+        <p>Today, Bhopal Taxi Service has grown into one of the most trusted taxi providers in the city, serving thousands of satisfied customers with our modern fleet and professional drivers.</p>
+        <div class="d-flex align-items-center mt-4">
+          <div class="rounded-circle p-3 me-3" style="background-color: #1ecb15; color: white;">
+            <i class="fas fa-car fa-2x"></i>
+          </div>
+          <div>
+            <h5 class="mb-0">50+ Vehicles</h5>
+            <small>Modern, well-maintained fleet</small>
+          </div>
         </div>
-    </section>
-    <!-- ONLINE BOOKING SECTION ENDS -->
+      </div>
+    </div>
 
+    <div class="row align-items-center g-5 mb-5 flex-lg-row-reverse">
+      <div class="col-lg-6">
+        <img src="./asssets/aboutus1.png" 
+             alt="Bhopal City View" 
+             class="img-fluid rounded">
+      </div>
+      <div class="col-lg-6">
+        <h2 class="fw-bold mb-4">Why Choose Us?</h2>
+        <div class="d-flex mb-3">
+          <div class="me-3" style="color: #1ecb15;">
+            <i class="fas fa-check-circle fa-lg"></i>
+          </div>
+          <div>
+            <h5 class="mb-1">24/7 Availability</h5>
+            <p class="mb-0">We're always ready to serve you, anytime, anywhere in Bhopal</p>
+          </div>
+        </div>
+        <div class="d-flex mb-3">
+          <div class="me-3" style="color: #1ecb15;">
+            <i class="fas fa-check-circle fa-lg"></i>
+          </div>
+          <div>
+            <h5 class="mb-1">Competitive Pricing</h5>
+            <p class="mb-0">Affordable rates without compromising on quality</p>
+          </div>
+        </div>
+        <div class="d-flex mb-3">
+          <div class="me-3" style="color: #1ecb15;">
+            <i class="fas fa-check-circle fa-lg"></i>
+          </div>
+          <div>
+            <h5 class="mb-1">Experienced Drivers</h5>
+            <p class="mb-0">Professional, licensed, and knowledgeable about Bhopal</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-5">
+      <div class="bg-light p-4 rounded-3">
+        <h3 class="fw-bold mb-3">Our Services</h3>
+        <section>
+        <section class="py-5">
+            <div class="container">
+                <div class="row justify-content-center g-4">
+                    <!-- Card 1 -->
+                    <div class="col-lg col-md-4 col-sm-6 col-12">
+                        <div class="custom-card">
+                            <div class="icon-container">
+                                <i class="fa-solid fa-route"></i>
+                            </div>
+                            <div class="card-header-custom"></div>
+                            <div class="card-body-custom">
+                                <h5 class="card-title">Outstation Trip</h5>
+                                <p class="card-text">Enjoy smooth and comfortable outstation rides at affordable prices.
+                                </p>
+                                <button class="btn btn-success book-btn" data-service="Outstation Trip"
+                                    style="background-color: #1ecb15 !important; border-color: #1ecb15 !important;">Book
+                                    Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col-lg col-md-4 col-sm-6 col-12">
+                        <div class="custom-card">
+                            <div class="icon-container">
+                                <i class="fa-solid fa-train"></i>
+                            </div>
+                            <div class="card-header-custom"></div>
+                            <div class="card-body-custom">
+                                <h5 class="card-title">Railway Pickup</h5>
+                                <p class="card-text">On-time pickup and drop service to and from railway stations.</p>
+                                <button class="btn btn-success book-btn" data-service="Railway Pickup"
+                                    style="background-color: #1ecb15 !important; border-color: #1ecb15 !important;">Book
+                                    Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col-lg col-md-4 col-sm-6 col-12">
+                        <div class="custom-card">
+                            <div class="icon-container">
+                                <i class="fa-solid fa-plane-departure"></i>
+                            </div>
+                            <div class="card-header-custom"></div>
+                            <div class="card-body-custom">
+                                <h5 class="card-title">Airport Pickup</h5>
+                                <p class="card-text">Hassle-free airport pickup and drop service with punctuality.</p>
+                                <button class="btn btn-success book-btn" data-service="Airport Pickup"
+                                    style="background-color: #1ecb15 !important; border-color: #1ecb15 !important;">Book
+                                    Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="col-lg col-md-4 col-sm-6 col-12">
+                        <div class="custom-card">
+                            <div class="icon-container">
+                                <i class="fa-solid fa-briefcase"></i>
+                            </div>
+                            <div class="card-header-custom"></div>
+                            <div class="card-body-custom">
+                                <h5 class="card-title">Corporate Trip</h5>
+                                <p class="card-text">Professional and punctual service tailored for business needs.</p>
+                                <button class="btn btn-success book-btn" data-service="Corporate Trip"
+                                    style="background-color: #1ecb15 !important; border-color: #1ecb15 !important;">Book
+                                    Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="col-lg col-md-4 col-sm-6 col-12">
+                        <div class="custom-card">
+                            <div class="icon-container">
+                                <i class="fa-solid fa-city"></i>
+                            </div>
+                            <div class="card-header-custom"></div>
+                            <div class="card-body-custom">
+                                <h5 class="card-title">Local Trips</h5>
+                                <p class="card-text">Explore the city with our reliable and budget-friendly local rides.
+                                </p>
+                                <button class="btn btn-success book-btn" data-service="Local Trips"
+                                    style="background-color: #1ecb15 !important; border-color: #1ecb15 !important;">Book
+                                    Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Single Modal for all services -->
+        <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="bookingModalLabel">Trip Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" id="selectedService">
+                        <div class="mb-3">
+                            <label for="fromLocation" class="form-label">From</label>
+                            <input type="text" class="form-control" id="fromLocation" placeholder="Starting location">
+                        </div>
+                        <div class="mb-3">
+                            <label for="toLocation" class="form-label">To</label>
+                            <input type="text" class="form-control" id="toLocation" placeholder="Destination">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-success"
+                            style="background-color: #1ecb15 !important; border-color: #1ecb15 !important;"
+                            onclick="bookService()">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // When any book button is clicked
+            document.querySelectorAll('.book-btn').forEach(button => {
+                button.addEventListener('click', function () {
+                    const service = this.getAttribute('data-service');
+                    document.getElementById('selectedService').value = service;
+                    document.getElementById('bookingModalLabel').textContent = `${service} Details`;
+                    const modal = new bootstrap.Modal(document.getElementById('bookingModal'));
+                    modal.show();
+                });
+            });
+
+            // Single booking function for all services
+            function bookService() {
+                const service = document.getElementById('selectedService').value;
+                const from = document.getElementById('fromLocation').value;
+                const to = document.getElementById('toLocation').value;
+
+                if (!from || !to) {
+                    alert('Please enter both From and To locations');
+                    return;
+                }
+
+                const message = `I want to book ${service} from ${from} to ${to}`;
+                window.open(`https://wa.me/918823892940?text=${encodeURIComponent(message)}`, '_blank');
+
+                // Close modal and clear fields
+                bootstrap.Modal.getInstance(document.getElementById('bookingModal')).hide();
+                document.getElementById('fromLocation').value = '';
+                document.getElementById('toLocation').value = '';
+            }
+        </script>
+        <style>
+            .custom-card {
+                background-color: #fff;
+                border-radius: 16px;
+                overflow: hidden;
+                position: relative;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                border: 1px solid #e0e0e0;
+                height: 100%;
+            }
+
+            .card-header-custom {
+                background-color: #1ecb15;
+                height: 70px;
+                width: 100%;
+            }
+
+            .icon-container {
+                position: absolute;
+                top: 35px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: #fff;
+                border: 3px solid #1ecb15;
+                border-radius: 50%;
+                padding: 15px;
+                z-index: 2;
+            }
+
+            .icon-container i {
+                font-size: 28px;
+                color: #1ecb15;
+            }
+
+            .card-body-custom {
+                text-align: center;
+                padding: 60px 20px 20px;
+                position: relative;
+                z-index: 1;
+            }
+
+            .btn-success {
+                background-color: #1ecb15;
+                border-color: #1ecb15;
+            }
+
+            .btn-success:hover {
+                background-color: #17a314;
+                border-color: #17a314;
+            }
+
+            @media (max-width: 1199px) {
+                .col-lg {
+                    flex: 0 0 20%;
+                    max-width: 20%;
+                }
+            }
+
+            @media (max-width: 991px) {
+                .col-lg {
+                    flex: 0 0 33.333333%;
+                    max-width: 33.333333%;
+                }
+            }
+
+            @media (max-width: 767px) {
+                .col-lg {
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                }
+            }
+
+            @media (max-width: 575px) {
+                .col-lg {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                }
+            }
+        </style>
+    </section>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-section {
+    background-color: #f8f9fa;
+  }
+  .divider {
+    width: 80px;
+    height: 4px;
+    background: #1ecb15;
+    margin-top: 15px;
+  }
+  .logo-placeholder {
+    display: inline-block;
+  }
+</style>
 
     <!-- Sticky WhatsApp and Call Buttons -->
     <section>
@@ -376,137 +667,7 @@
     </section>
 
 
-      <section class="contact-section py-5">
-        <style>
-            .contact-section {
-                background-color: #f9f9f9;
-            }
-
-            .contact-heading {
-                color: #1ecb15;
-                font-weight: bold;
-                margin-bottom: 40px;
-            }
-
-            .info-box {
-                background-color: #ffffff;
-                border-radius: 12px;
-                padding: 25px 20px;
-                margin-bottom: 20px;
-                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
-                transition: all 0.3s ease;
-                display: flex;
-                align-items: flex-start;
-                gap: 15px;
-            }
-
-            .info-box:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 10px 24px rgba(30, 203, 21, 0.2);
-            }
-
-            .info-icon {
-                font-size: 28px;
-                color: #1ecb15;
-                flex-shrink: 0;
-            }
-
-            .info-content h5 {
-                color: #1ecb15;
-                font-weight: 600;
-                margin: 0 0 5px;
-                font-size: 18px;
-            }
-
-            .info-content p {
-                margin: 0;
-                color: #333;
-                font-size: 15px;
-            }
-
-            .map-container {
-                height: 100%;
-                min-height: 100%;
-                display: flex;
-                flex-direction: column;
-            }
-
-            .map-container iframe {
-                flex: 1;
-                width: 100%;
-                border: none;
-                border-radius: 12px;
-            }
-
-            @media (max-width: 768px) {
-                .map-container {
-                    height: 300px;
-                    margin-bottom: 30px;
-                }
-            }
-        </style>
-
-        <div class="container">
-            <h2 class="text-center contact-heading">Contact Us</h2>
-            <div class="row align-items-stretch">
-                <div class="col-md-6 d-flex">
-                    <div class="map-container w-100">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3665.3176756141133!2d77.461263!3d23.267903999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa496370fe5127c87%3A0xac729fb5594b026a!2sBhopal%20Taxi%20Servicee!5e0!3m2!1sen!2sin!4v1753611616659!5m2!1sen!2sin"
-                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="info-box">
-                        <div class="info-icon">
-                            <i class="bi bi-geo-alt-fill"></i>
-                        </div>
-                        <div class="info-content">
-                            <h5>Address</h5>
-                            <p>
-                                Durga Chowk, Nerila Shankari, Narela Shankri, Ayodhya Nagar, Bhopal, Madhya Pradesh
-                                462001</p>
-                        </div>
-                    </div>
-                    <div class="info-box">
-                        <div class="info-icon">
-                            <i class="bi bi-envelope-fill"></i>
-                        </div>
-                        <div class="info-content">
-                            <h5>Email</h5>
-                            <p>bhopaltaxiservicess@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="info-box d-flex align-items-center">
-                        <div class="info-icon">
-                            <i class="bi bi-telephone-fill"></i>
-                        </div>
-                        <div class="info-content d-flex justify-content-between align-items-center w-100">
-                            <div>
-                                <h5>Phone</h5>
-                                <p>+918823892940</p>
-                            </div>
-                            <div class="d-flex gap-2 ms-3">
-                                <!-- WhatsApp Button -->
-                                <a href="https://wa.me/918823892940" class="btn text-white"
-                                    style="background-color: #1ecb15; min-width: 50px;">
-                                    <i class="fab fa-whatsapp me-2"></i>
-                                </a>
-                                <!-- Call Button -->
-                                <a href="tel:+918823892940" class="btn text-white"
-                                    style="background-color: #1ecb15; min-width: 50px;">
-                                    <i class="fas fa-phone-alt me-2"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-       <section class="footer-section position-relative overflow-hidden mt-5">
+    <section class="footer-section position-relative overflow-hidden mt-5">
         <div class="container py-5 text-white position-relative z-1">
             <div class="row g-4">
                 <!-- Column 1: Logo & Social -->
